@@ -1,0 +1,179 @@
+!! urxvt
+
+!! Screen DPI
+Xft.dpi: 192
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+
+URxvt*geometry:                115x40
+!URxvt*font: xft:Liberation Mono:pixelsize=24:antialias=false:hinting=true
+!URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=24:antialias=false:hinting=true
+!--------
+URxvt*font: xft:DejaVuSansMono NF:pixelsize=24, xft:FontAwesome:pixelsize=24
+URxvt*boldfont: xft:DejaVuSansMono NF:pixelsize=24, xft:FontAwesome:pixelsize=24
+!--------
+!URxvt*font: xft:DejaVuSansMono NF:pixelsize=24, xft:FontAwesome:pixelsize=24
+!URxvt*boldfont: xft:DejaVuSansMono NF:pixelsize=24, xft:FontAwesome:pixelsize=24
+
+URxvt*depth:       24
+URxvt*borderless:  1
+URxvt*scrollBar:   false
+URxvt*saveLines:   10000
+URxvt.letterSpace: 0
+!URxvt.transparent: true
+!URxvt.tintcolor:   white
+!URxvt*.shading:    10
+
+
+!! rofi
+!rofi.modi: run
+!rofi.font: Hack 15
+!rofi.width: 100
+!rofi.lines: 5
+!rofi.columns: 1
+!rofi.opacity: 80
+!                    bg       fg      altbg    hlbg     hlfg
+!rofi.color-normal: #282828, #ebdbb2, #282828, #ebdbb2, #282828
+!rofi.color-urgent: #282828, #ebdbb2, #282828, #ebdbb2, #282828
+!rofi.color-active: #282828, #ebdbb2, #282828, #ebdbb2, #282828
+!rofi.color-window: #282828, #282828
+!rofi.bw: 0
+!rofi.location: 2
+!rofi.padding: 100
+!rofi.fuzzy: false
+
+
+!! Meta modifier for keybindings
+!URxvt.modifier: super
+
+!! perl extensions
+URxvt.perl-ext:             default,matcher,url-select,clipboard
+
+!! url-select (part of urxvt-perls package)
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.url-select.autocopy:  true
+URxvt.url-select.button:    2
+URxvt.url-select.launcher:  vivaldi-stable
+URxvt.url-select.underline: true
+
+!! Open urxvt from current location
+!URxvt.perl-ext-common: others,fork-here
+URxvt.keysym.Mod4-Shift-Return: perl:fork-here:fork-at-cwd
+
+!! Nastavuje kopirovani
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+
+!! disable the stupid ctrl+shift 'feature'
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+!! Tabs
+!URxvt.perl-ext-common: ...,tabbed,...
+
+!! Tab colors
+!URxvt.tabbed.tabbar-fg: 3
+!URxvt.tabbed.tabbar-bg: 8
+!URxvt.tabbed.tab-fg: 7
+!URxvt.tabbed.tab-bg: 0
+
+!! urxvt color scheme ---------------------------
+
+URxvt*background: #000000
+URxvt*foreground: #bdbddb
+
+URxvt*colorUL: #8325b2
+
+
+!! black
+URxvt*color0  : #000000
+URxvt*color8  : #212121
+!! red
+URxvt*color1  : #FFB4B4
+URxvt*color9  : #FF4848
+!! green
+URxvt*color2  : #C8FF90
+URxvt*color10 : #A4FF48
+!! yellow
+URxvt*color3  : #FFFFB4
+URxvt*color11 : #FFFF48
+!! blue
+URxvt*color4  : #C890FF
+URxvt*color12 : #A448FF
+!! magenta
+URxvt*color5  : #FF48FF
+URxvt*color13 : #FF79C6
+!! cyan
+URxvt*color6  : #B4FFFF
+URxvt*color14 : #48FFFF
+!! white
+URxvt*color7  : #C1C1C1
+URxvt*color15 : #666666
+
+!!=============================
+!! Dracula Color Scheme
+
+!URxvt*background: #000000
+!URxvt*foreground: #F8F8F2
+
+!URxvt*colorUL: #8325b2
+
+!! black
+!URxvt*color0  : #000000
+!URxvt*color8  : #696969
+!! red
+!URxvt*color1  : #FF5555
+!URxvt*color9  : #FF6E67
+!! green
+!URxvt*color2  : #50FA7B
+!URxvt*color10 : #5AF78E
+!! yellow
+!URxvt*color3  : #F1FA8C
+!URxvt*color11 : #F4F99D
+!! blue
+!URxvt*color4  : #BD93F9
+!URxvt*color12 : #CAA9FA
+!! magenta
+!URxvt*color5  : #FF79C6
+!URxvt*color13 : #FF92D0
+!! cyan
+!URxvt*color6  : #8BE9FD
+!URxvt*color14 : #9AEDFE
+!! white
+!URxvt*color7  : #BFBFBF
+!URxvt*color15 : #E6E6E6
+!!==============================
+!! Default Color Scheme
+
+!URxvt*background: #000000
+!URxvt*foreground: #DEDEDE
+
+!! black
+!URxvt*color0  : #2E3436
+!URxvt*color8  : #555753
+!! red
+!URxvt*color1  : #CC0000
+!URxvt*color9  : #EF2929
+!! green
+!URxvt*color2  : #4E9A06
+!URxvt*color10 : #8AE234
+!! yellow
+!URxvt*color3  : #C4A000
+!URxvt*color11 : #FCE94F
+!! blue
+!URxvt*color4  : #3465A4
+!URxvt*color12 : #729FCF
+!! magenta
+!URxvt*color5  : #75507B
+!URxvt*color13 : #AD7FA8
+!! cyan
+!URxvt*color6  : #06989A
+!URxvt*color14 : #34E2E2
+!! white
+!URxvt*color7  : #D3D7CF
+!URxvt*color15 : #EEEEEC
