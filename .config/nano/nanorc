@@ -1,0 +1,43 @@
+## Enable config files from /usr/share/nano/*.nanorc
+
+include ~/.config/nano/sh.nanorc
+include ~/.config/nano/python.nanorc
+include /usr/share/nano/conf.nanorc
+include /usr/share/nano/xml.nanorc
+include /usr/share/nano/ruby.nanorc
+include /usr/share/nano/texinfo.nanorc
+include /usr/share/nano/tex.nanorc
+include /usr/share/nano/php.nanorc
+include /usr/share/nano/perl.nanorc
+include /usr/share/nano/objc.nanorc
+include /usr/share/nano/makefile.nanorc
+include /usr/share/nano/nanohelp.nanorc
+include /usr/share/nano/man.nanorc
+include /usr/share/nano/json.nanorc
+include /usr/share/nano/javascript.nanorc
+include /usr/share/nano/java.nanorc
+include /usr/share/nano/html.nanorc
+include /usr/share/nano/css.nanorc
+include /usr/share/nano/conf.nanorc
+include /usr/share/nano/changelog.nanorc
+include /usr/share/nano/awk.nanorc
+include /usr/share/nano/autoconf.nanorc
+include /usr/share/nano/default.nanorc
+
+set tabsize 4
+set tabstospaces
+
+## Colors: white, black, blue, green, red, cyan, yellow, magenta and normal
+## where normal being the default foreground and backgroud colors.
+## 'brightcolor' can only be used on the fgcolor
+## Example: [set itemcolor fgcolor,bgcolor]
+set titlecolor brightgreen,black
+set numbercolor white,black
+set keycolor yellow,black
+set functioncolor brightblue,black
+set selectedcolor blue,green
+set statuscolor brightgreen,black
+set errorcolor brightred,black
+
+## Toggle line numbers: Alt + Shift + 3
+set linenumbers

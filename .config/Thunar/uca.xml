@@ -1,0 +1,54 @@
+<?xml encoding="UTF-8" version="1.0"?>
+<actions>
+<action>
+	<icon>openterm</icon>
+	<name>Open Terminal Here</name>
+	<unique-id>1552189014135673-1</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description></description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>pyrenamer</icon>
+	<name>Copy File Name to Clipboard</name>
+	<unique-id>1554672030367481-1</unique-id>
+	<command>echo %N | xclip -i</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>edit-paste</icon>
+	<name>Copy Contents to Clipboard</name>
+	<unique-id>1553994248602560-1</unique-id>
+	<command>cat %F | xclip -i -selection clipboard</command>
+	<description></description>
+	<patterns>*</patterns>
+	<text-files/>
+</action>
+<action>
+	<icon>feh</icon>
+	<name>Open in Feh</name>
+	<unique-id>1553994511872665-3</unique-id>
+	<command>feh %f</command>
+	<description>Open image in Feh</description>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>document-print</icon>
+	<name>Print File</name>
+	<unique-id>1553994422254849-2</unique-id>
+	<command>xfprint4 %f</command>
+	<description>Send to Printer</description>
+	<patterns>*</patterns>
+	<text-files/>
+</action>
+</actions>

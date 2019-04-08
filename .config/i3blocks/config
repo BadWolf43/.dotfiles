@@ -1,0 +1,156 @@
+## List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+##--------------------------------------
+command=~/.scripts/statusbar/$BLOCK_NAME
+separator_block_width=30
+markup=pango
+##--------------------------------------
+
+
+[mediaplayer]
+command=~/.scripts/statusbar/mediaplayer
+instance=mpd
+interval=5
+signal=10
+label=🎵 
+color=#D92691
+min_width=800
+align=left
+
+[pacinstall]
+label=📦
+command=~/.scripts/statusbar/pacman_install
+interval=once
+signal=8
+
+## Weather updates hourly [WORKING] (Partly cloudy 73..77 F)
+#[weather2]
+#command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+#interval=3600
+#color=#839496
+
+[whatbox]
+#label=whatbox
+command=~/.scripts/whatbox/count_ready.sh
+interval=once
+
+[battery]
+#label=⚡🔌
+command=~/.scripts/statusbar/battery.py
+markup=pango
+interval=30
+
+[Weather]
+#label=⛅
+command=~/.scripts/statusbar/IconicWeather.sh "33409"
+#command=~/.scripts/status/weather
+interval=1800
+#color=#e97ac8
+
+[disk-home]
+#label=🏠
+label=
+command=~/.scripts/statusbar/disk_module.sh
+#command=/usr/lib/i3blocks/disk $HOME
+interval=30
+#color=#839496
+
+[lan-IP]
+#label=慎
+command=ip addr show ens20u1 | grep "inet "| awk '{ print ": " $2 }'
+#command=ip addr show wlp0s20f3 | grep "inet "| awk '{ print "ip: " $2 }'
+#command=hostname -i | awk '{ print "IP:" $1 }'
+interval=once
+color=#91E78B
+separator=false
+
+## WiFi percentage
+[wifi]
+label=
+#interface=wlp0s20f3
+command=~/.scripts/statusbar/wifi_modual.sh
+interval=10
+#separator=false
+#separator_block_width=15
+
+## WiFi -dBm
+#[strength]
+#label=
+#command=echo "$(iw dev wlp0s20f3 link | grep signal | cut -d " " -f 2-)"
+#interval=10
+#color=#839496
+#separator=false
+
+#[wireless-IP]
+#label=🌎
+#instance=wlp0s20f3
+#command=/usr/lib/i3blocks/iface
+#interval=10
+#separator=false
+#separator_block_width=15
+
+#[ssid]
+#label=
+#command=echo "$(iw dev wlp0s20f3 link | grep SSID | cut -d " " -f 2-)"
+#interval=5
+
+[temperature]
+command=~/.scripts/statusbar/temperature
+label=
+#label=🥵
+interval=10
+#T_WARN=70
+#T_CRIT=90
+#SENSOR_CHIP=""
+
+#[temp]
+#label=Temp
+#command=echo "$(sensors coretemp-isa-0000 | awk '/Physical/ {print $4}')"
+#interval=10
+#color=#b58900
+
+#[load]
+#label=load: 
+#command=/usr/lib/i3blocks/load_average
+#interval=10
+#color=#6c71c4
+
+[cpu]
+#label=
+label=💻
+command=~/.scripts/statusbar/cpu
+interval=20
+
+[memory]
+#label=
+label=🧠
+command=~/.scripts/statusbar/memory_module
+interval=20
+
+[volume]
+command=~/.scripts/statusbar/volume
+interval=1
+signal=10
+
+[brightness]
+label=💡
+interval=5
+
+[calendar]
+label=📅
+command=~/.scripts/statusbar/calendar_module.sh
+interval=1
