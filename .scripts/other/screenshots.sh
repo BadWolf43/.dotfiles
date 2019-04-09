@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCREEN_DIR=~/Documents/Screenshots/
+SCREEN_DIR=/mnt/storage/Pictures-X1e/Screenshots/
 SCREEN_PROMPT=1
 
 window='root'

@@ -9,7 +9,7 @@ xrandr --auto
 
 
 ## Start udiskie with tray icon
-udiskie -s &
+#udiskie -s &
 ## Start i3 window manager
 exec i3
 

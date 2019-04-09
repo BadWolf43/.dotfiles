@@ -93,10 +93,10 @@ else:
 
 
     def color(percent):
-        if percent < 10:
+        if percent < 20:
             # exit code 33 will turn background red
             return "#FFFFFF"
-        if percent < 20:
+        if percent < 21:
             return "#FF3300"
         if percent < 30:
             return "#FF6600"
@@ -118,5 +118,5 @@ else:
 
 print(fulltext)
 print(fulltext)
-if percentleft < 10:
+if percentleft < 20:
     exit(33)

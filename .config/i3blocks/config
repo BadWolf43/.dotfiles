@@ -48,12 +48,6 @@ signal=8
 command=~/.scripts/whatbox/count_ready.sh
 interval=once
 
-[battery]
-#label=⚡🔌
-command=~/.scripts/statusbar/battery.py
-markup=pango
-interval=30
-
 [Weather]
 #label=⛅
 command=~/.scripts/statusbar/IconicWeather.sh "33409"
@@ -149,6 +143,12 @@ signal=10
 [brightness]
 label=💡
 interval=5
+
+[battery]
+#label=⚡🔌
+command=~/.scripts/statusbar/battery.py
+markup=pango
+interval=30
 
 [calendar]
 label=📅

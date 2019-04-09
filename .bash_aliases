@@ -62,6 +62,7 @@ shopt -s autocd
 alias c='clear'
 alias ee='exit'
 
+
 # --------------------------------------------[ Utilities ]
 alias mx='alsamixer'               # alsa audio mixer
 alias music='ncmpcpp'              # mpd music player client
@@ -75,7 +76,7 @@ alias shutdown='sudo shutdown -P'
 alias mount='mount | column -t'
 #alias date='date +"%m-%d-%Y | %H:%M:%S"'
 ## Calendar
-alias ports='netstat -tulanp'
+alias ports='ss'
 #alias rearbackup='rear -v mkbackup'
 
 # --------------------------------------------[ My root Scripts]
