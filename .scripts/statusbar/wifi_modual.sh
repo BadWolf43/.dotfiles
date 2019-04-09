@@ -20,12 +20,13 @@ if [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]]; then
 fi
 
 #------------------------------------------------------------------------
-icon=$HOME/.icons/dunst/wifi-icon3.png
+icon=$HOME/.icons/dunst/wifi-icon.png
 title_fg="foreground='#E8E713'"
 SSID="$(iw dev wlp0s20f3 link | grep SSID | cut -d " " -f 2-)"
 IP="$(ip addr show wlp0s20f3 | grep "inet "| awk '{ print $2 }')"
 SIGNAL="$(iw dev wlp0s20f3 link | grep signal | cut -d " " -f 2-)"
 QUALITY=$(grep $INTERFACE /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
+BANDWIDTH="$(.scripts/statusbar/get-bandwidth)"
 #LAN_USBC1="ip addr show ens20u1 | grep "inet "| awk '{ print ": " $2 }'"
 #LAN_THINKPAD="ip addr show enp0s31f6 | grep "inet "| awk '{ print ": " $2 }'"
 
@@ -54,9 +55,10 @@ case $BLOCK_BUTTON in
                     -t 5000  \
     "<span $title_fg><u><b>WiFi Module</b></u></span>
 
- Strength: $(echo $QUALITY%)
- SIGNAL..: $(echo $SIGNAL)
- SSID....: $(echo $SSID)
- IP......: $(echo $IP)"  ;;
+ Bandwidth: $(echo $BANDWIDTH)
+ Strength.: $(echo $QUALITY%)
+ SIGNAL...: $(echo $SIGNAL)
+ SSID.....: $(echo $SSID)
+ IP.......: $(echo $IP)"  ;;
 esac
 
