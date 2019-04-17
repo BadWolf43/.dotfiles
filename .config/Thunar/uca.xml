@@ -1,6 +1,15 @@
 <?xml encoding="UTF-8" version="1.0"?>
 <actions>
 <action>
+	<icon>wallpaper</icon>
+	<name>Set as Wallpaper with &apos;Feh&apos;</name>
+	<unique-id>1554825757136897-1</unique-id>
+	<command>feh --bg-scale %f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
 	<icon>openterm</icon>
 	<name>Open Terminal Here</name>
 	<unique-id>1552189014135673-1</unique-id>
@@ -32,15 +41,6 @@
 	<description></description>
 	<patterns>*</patterns>
 	<text-files/>
-</action>
-<action>
-	<icon>feh</icon>
-	<name>Open in Feh</name>
-	<unique-id>1553994511872665-3</unique-id>
-	<command>feh %f</command>
-	<description>Open image in Feh</description>
-	<patterns>*</patterns>
-	<image-files/>
 </action>
 <action>
 	<icon>document-print</icon>

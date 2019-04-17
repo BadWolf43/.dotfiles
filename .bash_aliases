@@ -36,6 +36,7 @@ alias ls='ls --color=auto'
 alias ll='ls -AhlF'
 alias nn='nano'
 alias snn='sudo nano'
+# open sublime text
 alias sb='subl'
 alias sf='screenfetch'
 alias grep='grep --color=auto'
@@ -56,12 +57,16 @@ alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
+alias c='clear'
+alias ee='exit'
 #Allows you to cd into a directory by typing the directory name
 shopt -s autocd
 
-alias c='clear'
-alias ee='exit'
-
+# --------------------------------------------[ Directories ]
+alias sc='cd ~/.scripts'
+alias cf='cd ~/.config'
+alias mn='cd /mnt'
+alias st='cd /mnt/storage'
 
 # --------------------------------------------[ Utilities ]
 alias mx='alsamixer'               # alsa audio mixer

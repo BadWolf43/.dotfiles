@@ -5,6 +5,7 @@
 
 icon=$HOME/.icons/dunst/package-icon_x128.png
 title_fg="foreground='#E8E713'"
+available="$HOME/.locks/.pacman-downloads"
 
 case $BLOCK_BUTTON in
     1) $TERMINAL -e  sudo pacman -Syu && pacman -Qu | wc -l > ~/.locks/.pacman-downloads && pkill -RTMIN+8 i3blocks ;;
@@ -18,8 +19,13 @@ case $BLOCK_BUTTON in
   - Right click to show this message" ;;
 esac
 
+# Count number of packages & write amount to file '.pacman-downloads'
+pacman -Qu | wc -l > ${available}
+# Print number of packages
+cat ${available}
+
+
+
 #pacman -Qu | wc -l | sed -e '/*^0$/d' > ~/.locks/.pacman-downloads && pkill -RTMIN+8 i3blocks
-
-cat ~/.locks/.pacman-downloads | sed -e "/^$/d"
-
+#cat ~/.locks/.pacman-downloads | sed -e "/^$/d"
 #pacman -Qu | grep -v "\[ignored\]" | wc -l | sed -e "s/^0$//g"
