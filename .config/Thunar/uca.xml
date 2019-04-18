@@ -51,4 +51,22 @@
 	<patterns>*</patterns>
 	<text-files/>
 </action>
+<action>
+	<icon>view-refresh</icon>
+	<name>Refresh</name>
+	<unique-id>1555541680198291-1</unique-id>
+	<command></command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>image-crop</icon>
+	<name>Convert to 3840x2160</name>
+	<unique-id>1555542452440556-2</unique-id>
+	<command>convert %N -resize 3840x2160^ -gravity center -extent 3840x2160 %N</command>
+	<description></description>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
 </actions>

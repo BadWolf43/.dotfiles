@@ -16,7 +16,7 @@ remote_files='~/_Files/'
 remote_other='~/_Other/'
 
 
-icon=~/.icons/dunst/weather-icon.png
+icon=~/.icons/dunst/rutorrent-icon.png
 title_fg="foreground='#E8E713'"
 
 
