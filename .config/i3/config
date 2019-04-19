@@ -317,7 +317,7 @@ bar {
     focused_workspace  #05ffaf #000000 #fdf6e3
     active_workspace   #05ffaf #30005d #079ba5
     inactive_workspace #000000 #000000 #4d4d4d
-    urgent_workspace   #d33682 #d33682 #fdf6e3
+    urgent_workspace   #FCFF00 #780002 #FF0500
   }
 }
 ##--------------------------------------------------------------[ i3 Colors ]

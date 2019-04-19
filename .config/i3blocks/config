@@ -41,27 +41,20 @@ signal=8
 #[weather2]
 #command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
 #interval=3600
-#color=#839496
 
 [whatbox]
-#label=whatbox
 command=~/.scripts/whatbox/count_ready.sh
 interval=once
 
 [Weather]
-#label=⛅
 command=~/.scripts/statusbar/IconicWeather.sh "33409"
 #command=~/.scripts/status/weather
 interval=1800
-#color=#e97ac8
 
 [disk-home]
-#label=🏠
 label=
 command=~/.scripts/statusbar/disk_module.sh
-#command=/usr/lib/i3blocks/disk $HOME
-interval=30
-#color=#839496
+interval=60
 
 [lan-IP]
 #label=慎
@@ -72,40 +65,15 @@ interval=once
 color=#91E78B
 separator=false
 
-## WiFi percentage
-[wifi]
+## WiFi percentage | interface: wlp0s20f3
+[wifi-module]
 label=
-#interface=wlp0s20f3
 command=~/.scripts/statusbar/wifi_modual.sh
-interval=10
-#separator=false
-#separator_block_width=15
-
-## WiFi -dBm
-#[strength]
-#label=
-#command=echo "$(iw dev wlp0s20f3 link | grep signal | cut -d " " -f 2-)"
-#interval=10
-#color=#839496
-#separator=false
-
-#[wireless-IP]
-#label=🌎
-#instance=wlp0s20f3
-#command=/usr/lib/i3blocks/iface
-#interval=10
-#separator=false
-#separator_block_width=15
-
-#[ssid]
-#label=
-#command=echo "$(iw dev wlp0s20f3 link | grep SSID | cut -d " " -f 2-)"
-#interval=5
+interval=5
 
 [temperature]
 command=~/.scripts/statusbar/temperature
 label=
-#label=🥵
 interval=10
 #T_WARN=70
 #T_CRIT=90
@@ -127,28 +95,27 @@ interval=10
 #label=
 label=💻
 command=~/.scripts/statusbar/cpu
-interval=20
+interval=10
 
 [memory]
 #label=
 label=🧠
 command=~/.scripts/statusbar/memory_module
-interval=20
+interval=10
 
 [volume]
 command=~/.scripts/statusbar/volume
 interval=1
-signal=10
+signal=20
 
 [brightness]
 label=💡
-interval=5
+interval=20
 
 [battery]
-#label=⚡🔌
 command=~/.scripts/statusbar/battery.py
 markup=pango
-interval=30
+interval=10
 
 [calendar]
 label=📅
