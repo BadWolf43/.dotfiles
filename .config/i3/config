@@ -24,7 +24,7 @@ smart_gaps on
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
 
-## Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. 
+## Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps.    <------------------------- Learn how to use this ----------|
 ## Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). 
 ## If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
@@ -205,9 +205,14 @@ bindsym $mod+t exec ~/.scripts/other/restart_dunst.sh
 
 ## Restart Compton (NOT Working)
 #bindsym $mod+Shift+p ~/.scripts/other/restart_compton.sh
-##--------------------------------------------------------------|
+##--------------------------------------------------------------[ Resize Windows ]
+## (can also use the mouse)
 
-## resize window (you can also use the mouse for that)
+##   ........ Shrink
+##   :  .... Shrink
+##     ... Grow
+##     :..... Grow
+
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -222,9 +227,9 @@ mode "resize" {
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 5 px or 5 ppt
-        bindsym Down resize grow height 5 px or 5 ppt
-        bindsym Up resize shrink height 5 px or 5 ppt
         bindsym Right resize grow width 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -296,6 +301,7 @@ bindsym $mod+l exec i3lock-fancy
 for_window [class="calculator"] floating enable, boarder normal
 for_window [class="Lxappearance"] floating enable, sticky enable, border normal
 for_window [class="systemd-manager"] floating enable, border normal
+#for_window [class="pulsemixer"] floating enable, border normal
 
 ##--------------------------------------------------------------[ Start i3blocks ]
 ## Color Code Order: 'line color' > 'Background color' > 'Number Color'
@@ -335,7 +341,8 @@ exec --no-startup-id i3-msg "workspace 2; exec /usr/bin/urxvt"
 exec --no-startup-id i3-msg "workspace 4; exec /usr/bin/sublime_text"
 
 ## Set wallpaper
-exec_always --no-startup-id feh --bg-scale ~/storage/Pictures-X1e/Wallpapers/active/wall.png
+#exec_always --no-startup-id feh --bg-scale ~/storage/Pictures-X1e/Wallpapers/active/wall.png
+exec_always --no-startup-id ~/.fehbg
 
 ## Start Compton
 exec --no-startup-id compton -f
@@ -344,7 +351,7 @@ exec --no-startup-id compton -f
 exec --no-startup-id nm-applet
 
 ## Start udiskie
-exec --no-startup-id udiskie --smart-tray --use-udisks2
+exec --no-startup-id udiskie --smart-tray --use-udisks2 --config=$HOME/.config/udiskie/config.json
 
 ## Start mpd (music player daemon)
 exec --no-startup-id mpd ~/.config/mpd/mpd.conf
