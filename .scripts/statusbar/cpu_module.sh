@@ -3,17 +3,20 @@
 
 icon=~/.icons/dunst/cpu-icon_x128.png
 title_fg="foreground='#E8E713'"
-color_bg="string:bgcolor:#252732"
-color_fg="string:fgcolor:#05ffaf"
+#color_bg="string:bgcolor:#252732"
+#color_fg="string:fgcolor:#05ffaf"
 time="5000"
-cpu="$(ps axc -o cmd:15,%cpu --sort=-%cpu | head -n 15)"
+# cmd:15 = width of columns
+# head -n 15 = number of processes
+cpu="$(ps axc -o cmd:25,%cpu --sort=-%cpu | head -n 15)"
 
 case $BLOCK_BUTTON in
     1) notify-send  -i $icon \
                     -t $time  \
     "<span $title_fg><u><b>CPU Module</b></u></span>
 
-echo $cpu" ;;
+$cpu
+" ;;
 esac
 
 #---------------------

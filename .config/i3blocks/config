@@ -21,15 +21,15 @@ markup=pango
 ##--------------------------------------
 
 
-[mediaplayer]
-command=~/.scripts/statusbar/mediaplayer
-instance=mpd
-interval=5
-signal=10
-label=🎵 
-color=#D92691
-min_width=800
-align=left
+#[mediaplayer]
+#command=~/.scripts/statusbar/mediaplayer
+#instance=mpd
+#interval=5
+#signal=10
+#label=🎵 
+#color=#D92691
+#min_width=800
+#align=left
 
 [pacinstall]
 label=📦
@@ -46,13 +46,19 @@ signal=8
 command=~/.scripts/whatbox/count_ready.sh
 interval=once
 
-[Weather]
-command=~/.scripts/statusbar/IconicWeather.sh "33409"
+[weather_module]
+#label=wttr
+command=~/.scripts/statusbar/weather_module_wttr.sh
+interval=60
+
+#[Weather]
+#command=~/.scripts/statusbar/IconicWeather2.sh "33409"
 #command=~/.scripts/status/weather
-interval=1800
+#interval=1800
 
 [disk-home]
-label=
+#label=
+label=💽
 command=~/.scripts/statusbar/disk_module.sh
 interval=60
 
@@ -71,19 +77,18 @@ label=
 command=~/.scripts/statusbar/wifi_modual.sh
 interval=5
 
-[temperature]
-command=~/.scripts/statusbar/temperature
-label=
-interval=10
+#[temperature] - this is wifi temp
+#command=~/.scripts/statusbar/temperature
+#label=🌡️
+#interval=10
 #T_WARN=70
 #T_CRIT=90
 #SENSOR_CHIP=""
 
-#[temp]
-#label=Temp
-#command=echo "$(sensors coretemp-isa-0000 | awk '/Physical/ {print $4}')"
-#interval=10
-#color=#b58900
+[cpu_temp_module]
+label=🌡️
+command=~/.scripts/statusbar/cpu_temp_module.sh
+interval=5
 
 #[load]
 #label=load: 
@@ -94,7 +99,7 @@ interval=10
 [cpu]
 #label=
 label=💻
-command=~/.scripts/statusbar/cpu
+command=~/.scripts/statusbar/cpu_module.sh
 interval=10
 
 [memory]

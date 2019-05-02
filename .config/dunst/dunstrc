@@ -4,7 +4,7 @@
     geometry = "2160x5-50+75"
     indicate_hidden = yes
     shrink = yes
-    transparency = 20
+    transparency = 15
     notification_height = 0
     separator_height = 5
     padding = 10
@@ -50,7 +50,7 @@
     hide_duplicate_count = true
     show_indicators = yes
     icon_position = left
-    max_icon_size = 64
+    max_icon_size = 128
 
     # /usr/share/icons/Moka/256x256/devices:/usr/share/icons/Adwaita/256x256/legacy:
     #icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/:/usr/share/icons/Adwaita/256x256/status/

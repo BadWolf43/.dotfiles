@@ -1,20 +1,17 @@
 #!/bin/sh
 
 
-icon=~/.icons/dunst/memory-icon.png
+icon=~/.icons/dunst/ram-icon.png
 title_fg="foreground='#E8E713'"
-color_bg="string:bgcolor:#252732"
-color_fg="string:fgcolor:#05ffaf"
 time="5000"
 
 case $BLOCK_BUTTON in
     1) notify-send  -i $icon \
-                    -h $color_fg \
-                    -h $color_bg  \
                     -t $time  \
     "<span $title_fg><u><b>Memory Module</b></u></span>
 
-$(ps axch -o cmd:15,%mem --sort=-%mem | head -n 20)" ;;
+$(ps axch -o cmd:25,%mem --sort=-%mem | head -n 15)
+" ;;
 esac
 
 

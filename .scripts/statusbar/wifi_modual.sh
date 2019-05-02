@@ -22,6 +22,7 @@ fi
 #------------------------------------------------------------------------
 icon=$HOME/.icons/dunst/wifi-icon.png
 title_fg="foreground='#E8E713'"
+TEMP="$(sensors | grep -A 2 "iwlwifi" | grep "temp" | awk '{print $2}')"
 SSID="$(iw dev wlp0s20f3 link | grep SSID | cut -d " " -f 2-)"
 IP="$(ip addr show wlp0s20f3 | grep "inet "| awk '{ print $2 }')"
 SIGNAL="$(iw dev wlp0s20f3 link | grep signal | cut -d " " -f 2-)"
@@ -36,12 +37,12 @@ echo $QUALITY% # full text
 echo $QUALITY% # short text
 
 # color
-if [[ $QUALITY -ge 80 ]]; then
+if [[ $QUALITY -ge 75 ]]; then
     echo "#05ffaf"
-elif [[ $QUALITY -ge 60 ]]; then
-    echo "#A448FF"
-elif [[ $QUALITY -ge 40 ]]; then
+elif [[ $QUALITY -ge 50 ]]; then
     echo "#FFFF48"
+elif [[ $QUALITY -ge 30 ]]; then
+    echo "#F2A272"
 else
     echo "#FF4848"
 fi
@@ -50,15 +51,15 @@ fi
 # 1) notify-send -u normal 
 case $BLOCK_BUTTON in
     1) notify-send  -i $icon \
-                    -h string:fgcolor:#05ffaf \
-                    -h string:bgcolor:#252732  \
-                    -t 5000  \
+                    -t 9000  \
     "<span $title_fg><u><b>WiFi Module</b></u></span>
 
- Bandwidth: $(echo $BANDWIDTH)
- Strength.: $(echo $QUALITY%)
- SIGNAL...: $(echo $SIGNAL)
- SSID.....: $(echo $SSID)
- IP.......: $(echo $IP)"  ;;
+ Bandwidth...: $(echo $BANDWIDTH)
+ Strength....: $(echo $QUALITY%)
+ SIGNAL......: $(echo $SIGNAL)
+ SSID........: $(echo $SSID)
+ IP..........: $(echo $IP)
+ Adapter Temp: $(echo $TEMP) 🌡️
+"  ;;
 esac
 
