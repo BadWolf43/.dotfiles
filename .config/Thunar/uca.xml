@@ -69,4 +69,13 @@
 	<patterns>*</patterns>
 	<image-files/>
 </action>
+<action>
+	<icon>udiskie-mount</icon>
+	<name>mount</name>
+	<unique-id>1557101025276148-1</unique-id>
+	<command>sudo mount -a</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
 </actions>

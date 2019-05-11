@@ -5,7 +5,7 @@ icon=~/.icons/dunst/cpu-icon_x128.png
 title_fg="foreground='#E8E713'"
 #color_bg="string:bgcolor:#252732"
 #color_fg="string:fgcolor:#05ffaf"
-time="5000"
+time="10000"
 # cmd:15 = width of columns
 # head -n 15 = number of processes
 cpu="$(ps axc -o cmd:25,%cpu --sort=-%cpu | head -n 15)"

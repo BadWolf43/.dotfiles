@@ -18,7 +18,6 @@ include /usr/share/nano/javascript.nanorc
 include /usr/share/nano/java.nanorc
 include /usr/share/nano/html.nanorc
 include /usr/share/nano/css.nanorc
-include /usr/share/nano/conf.nanorc
 include /usr/share/nano/changelog.nanorc
 include /usr/share/nano/awk.nanorc
 include /usr/share/nano/autoconf.nanorc

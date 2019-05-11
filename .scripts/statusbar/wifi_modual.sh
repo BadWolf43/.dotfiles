@@ -42,7 +42,7 @@ if [[ $QUALITY -ge 75 ]]; then
 elif [[ $QUALITY -ge 50 ]]; then
     echo "#FFFF48"
 elif [[ $QUALITY -ge 30 ]]; then
-    echo "#F2A272"
+    echo "#FF9228"
 else
     echo "#FF4848"
 fi

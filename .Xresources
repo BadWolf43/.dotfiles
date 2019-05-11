@@ -84,36 +84,42 @@ URxvt.iso14755_52: false
 
 !! urxvt color scheme ---------------------------
 
+!! Other-white
+!URxvt*color7  : #C1C1C1
+!URxvt*color15 : #666666
+!! Other-green
+!URxvt*color2  : #C8FF90
+!URxvt*color10 : #A4FF48
+
 URxvt*background: #000000
 URxvt*foreground: #bdbddb
 
 URxvt*colorUL: #8325b2
 
-
 !! black
 URxvt*color0  : #000000
 URxvt*color8  : #212121
 !! red
-URxvt*color1  : #FFB4B4
+URxvt*color1  : #F08383
 URxvt*color9  : #FF4848
 !! green
-URxvt*color2  : #C8FF90
-URxvt*color10 : #A4FF48
+URxvt*color2  : #95FEDD
+URxvt*color10 : #05FFAF
 !! yellow
-URxvt*color3  : #FFFFB4
-URxvt*color11 : #FFFF48
+URxvt*color3  : #FFF334
+URxvt*color11 : #FFDD00
 !! blue
 URxvt*color4  : #C890FF
 URxvt*color12 : #A448FF
 !! magenta
-URxvt*color5  : #FF48FF
-URxvt*color13 : #FF79C6
+URxvt*color5  : #F381D4
+URxvt*color13 : #C11E95
 !! cyan
-URxvt*color6  : #B4FFFF
-URxvt*color14 : #48FFFF
+URxvt*color6  : #8EB5FF
+URxvt*color14 : #48ABFF
 !! white
-URxvt*color7  : #C1C1C1
-URxvt*color15 : #666666
+URxvt*color7  : #909090
+URxvt*color15 : #616161
 
 !!=============================
 !! Dracula Color Scheme
@@ -145,7 +151,7 @@ URxvt*color15 : #666666
 !URxvt*color6  : #8BE9FD
 !URxvt*color14 : #9AEDFE
 !! white
-!URxvt*color7  : #BFBFBF
+!URxvt*color7  : #8A8A8A
 !URxvt*color15 : #E6E6E6
 !!==============================
 !! Default Color Scheme

@@ -1,19 +1,19 @@
 ## List of valid properties:
 #
-# align
-# color
-# command
-# full_text
-# instance
-# interval
-# label
-# min_width
-# name
-# separator
-# separator_block_width
-# short_text
-# signal
-# urgent
+# align=....................left/right/center
+# color=....................#000000
+# command=..................command or path to script
+# full_text=................text
+# instance=.................service
+# interval=.................number
+# label=....................text
+# min_width=................number
+# name=.....................text
+# separator=................true/false
+# separator_block_width=....number
+# short_text=...............text
+# signal=...................number/once
+# urgent=...................
 ##--------------------------------------
 command=~/.scripts/statusbar/$BLOCK_NAME
 separator_block_width=30
@@ -37,6 +37,11 @@ command=~/.scripts/statusbar/pacman_install
 interval=once
 signal=8
 
+[dotfiles]
+label=🗃️
+command=~/.scripts/statusbar/modified_dotfiles_module.sh
+interval=once
+
 ## Weather updates hourly [WORKING] (Partly cloudy 73..77 F)
 #[weather2]
 #command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
@@ -49,7 +54,7 @@ interval=once
 [weather_module]
 #label=wttr
 command=~/.scripts/statusbar/weather_module_wttr.sh
-interval=60
+interval=20
 
 #[Weather]
 #command=~/.scripts/statusbar/IconicWeather2.sh "33409"
@@ -97,14 +102,14 @@ interval=5
 #color=#6c71c4
 
 [cpu]
-#label=
-label=💻
+label=CPU
+#label=💻
 command=~/.scripts/statusbar/cpu_module.sh
 interval=10
 
 [memory]
-#label=
-label=🧠
+label=
+#label=🧠
 command=~/.scripts/statusbar/memory_module
 interval=10
 
@@ -121,6 +126,10 @@ interval=20
 command=~/.scripts/statusbar/battery.py
 markup=pango
 interval=10
+
+#[battery_module] {need to fix the sudo 'tlp-stat' errors in journalctl}
+#command=~/.scripts/statusbar/battery_module.sh
+#interval=10
 
 [calendar]
 label=📅

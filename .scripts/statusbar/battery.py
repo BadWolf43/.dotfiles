@@ -89,7 +89,7 @@ else:
         fulltext = FA_QUESTION + " " + FA_BATTERY + " "
         timeleft = ""
     else:
-        fulltext = FA_LIGHTNING + " " + FA_PLUG + " "
+        fulltext = FA_PLUG + " " + FA_LIGHTNING + " "
 
 
     def color(percent):
@@ -99,18 +99,14 @@ else:
         if percent < 21:
             return "#FF3300"
         if percent < 30:
-            return "#FF6600"
+            return "#FF7B00"
         if percent < 40:
-            return "#FF9900"
+            return "#FFC300"
         if percent < 50:
-            return "#FFCC00"
-        if percent < 60:
-            return "#FFFF00"
-        if percent < 70:
-            return "#FFFF33"
-        if percent < 90:
-            return "#FFFF66"
-        return "#FFFFFF"
+            return "#D4FF48"
+        if percent < 75:
+            return "#63FF92"
+        return "#05FFAF"
 
     form =  '<span color="{}">{}%</span>'
     fulltext += form.format(color(percentleft), percentleft)

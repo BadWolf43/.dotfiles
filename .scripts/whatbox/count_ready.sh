@@ -14,6 +14,7 @@ remote_movies='~/_Movies/'
 remote_tv='~/_TV/'
 remote_files='~/_Files/'
 remote_other='~/_Other/'
+list_ready='~/.scripts/whatbox/list_ready.sh'
 
 
 icon=~/.icons/dunst/rutorrent-icon.png
@@ -21,8 +22,9 @@ title_fg="foreground='#E8E713'"
 
 
 case $BLOCK_BUTTON in
-     3) notify-send  -i $icon \
-     "<span $title_fg><u><b>WhatBox Module</b></u></span>
+    1) notify-send -i $icon echo $list_ready ;;
+    3) notify-send  -i $icon \
+    "<span $title_fg><u><b>WhatBox Module</b></u></span>
 
 - Number of completed torrents
   ready to be downloaded."  ;;

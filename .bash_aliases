@@ -71,7 +71,8 @@ alias st='cd /mnt/storage'
 
 # --------------------------------------------[ Utilities ]
 alias mx='alsamixer'               # alsa audio mixer
-alias music='ncmpcpp'              # mpd music player client
+alias music='~/.config/ncmpcpp/launch.sh'              # mpd music player client
+alias calcurse='calcurse -D ~/.config/calcurse/'
 #alias rm='rm -i'                  # add confirmation to delete
 #alias diff='colordiff'            # install colorediff package
 

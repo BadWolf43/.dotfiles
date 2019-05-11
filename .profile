@@ -23,11 +23,11 @@ export PATH="$PATH:$HOME/.scripts/"
 export VISUAL="nano"
 export EDITOR="nano"
 export TERMINAL="urxvt"
-export CALCULATOR="speedcrunch"
+export CALCULATOR="gnome_calculator"
 export BROWSER="vivaldi"
-#export READER="zathura"
-#export FILE="ranger"
+export READER="zathura"
 export FILE="thunar"
+#export FILE="ranger"
 # VLC scaling fix
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
