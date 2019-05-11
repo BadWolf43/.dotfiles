@@ -19,9 +19,11 @@ gitstatus="$(git --git-dir=$HOME/repos/.dotfiles/ --work-tree=$HOME status | gre
 
 # see .scripts/git/git_commit.sh
 
+if [ $gitcount -ge 1 ]; then
+    echo "$gitcount"
+fi
 
-
-echo "$gitcount"
+#echo "$gitcount"
 
 case $BLOCK_BUTTON in
     1) notify-send  -i $icon \
