@@ -1,0 +1,29 @@
+# Colors
+set recolor-darkcolor "#7f8f9f"
+set recolor-lightcolor "#0c0d0e"
+
+# Misc
+tabbed -c zathura -e
+set selection-clipboard clipboard
+set scroll-wrap false
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set page-padding 1
+
+# keybindings
+map [fullscreen] a adjust_window best-fit
+map [fullscreen] s adjust_window width
+map [fullscreen] f follow
+map [fullscreen] <Tab> toggle_index
+map [fullscreen] j scroll down
+map [fullscreen] k scroll up
+
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+map r reload
+map R rotate
+map K zoom in
+map J zoom out
+map i recolor
+map p print
