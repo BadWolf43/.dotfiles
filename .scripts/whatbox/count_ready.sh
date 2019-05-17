@@ -22,7 +22,17 @@ title_fg="foreground='#E8E713'"
 
 
 case $BLOCK_BUTTON in
-    1) notify-send -i $icon echo $list_ready ;;
+#     1) notify-send -i $icon \
+
+# ssh -T "${user}"@"${host}" \
+# $(echo ls ${remote_music}) \
+
+# echo -e "\n[MUSIC]--------------------\n"
+# # ls ${remote_music}
+
+
+# exit ;;
+
     3) notify-send  -i $icon \
     "<span $title_fg><u><b>WhatBox Module</b></u></span>
 
@@ -62,6 +72,24 @@ ls ${remote_other} | wc -l | tr -d '\n'
 # # other 
 # ls ${remote_other} | wc -l
 # -----------------------------------------------------
+
+
+# echo -e "\n[MUSIC]--------------------\n"
+# ls ${remote_music}
+
+# echo -e "\n[MOVIES]-------------------\n"
+# ls ${remote_movies}
+
+# echo -e "\n[TV]-----------------------\n"
+# ls ${remote_tv}
+
+# echo -e "\n[FILES]--------------------\n"
+# ls ${remote_files}
+
+# echo -e "\n[OTHER]--------------------\n"
+# ls ${remote_other}
+
+# echo -e "\n---------------------------\n"
 
 EOF
 exit

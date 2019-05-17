@@ -40,6 +40,7 @@ alias snn='sudo nano'
 # open sublime text
 alias sb='subl'
 alias sf='screenfetch'
+alias nf='neofetch'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'

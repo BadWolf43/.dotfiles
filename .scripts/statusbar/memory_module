@@ -16,6 +16,12 @@ esac
 
 
 #free -h | awk '/^Mem:/ {print $3 "/" $2}'
+#-----------OR
+# Should return % USED
+# adding used + shared / total * 100 = % used
+#free -h | grep Mem | awk '{print ($3+$5)/$2 * 100.0}'
+#24.6667%
+
 #--------------------------------------------------------
 
 TYPE="${BLOCK_INSTANCE:-mem}"
@@ -61,8 +67,8 @@ END {
 	# short text  <------------- [ Option 2 ]
 	printf("%.f%%\n", pct)
 
-	# color | if 90 then 80 70
-	if (pct > 5) {
+	# color
+	if (pct < 5) {
 		print("#FF0000")
 	} else if (pct > 6) {
 		print("#FFAE00")
