@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 #------------------------------------------------------------------------
 if [[ -z "$INTERFACE" ]] ; then
     INTERFACE="${BLOCK_INSTANCE:-wlp0s20f3}"
@@ -33,8 +32,8 @@ BANDWIDTH="$(.scripts/statusbar/get-bandwidth)"
 
 #------------------------------------------------------------------------
 
-echo $QUALITY% # full text
-echo $QUALITY% # short text
+echo $QUALITY% $BANDWIDTH
+echo $QUALITY% $BANDWIDTH
 
 # color
 if [[ $QUALITY -ge 75 ]]; then

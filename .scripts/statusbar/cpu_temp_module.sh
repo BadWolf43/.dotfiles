@@ -32,7 +32,7 @@ elif [[ $TEMP_c -ge 50 ]]; then
 elif [[ $TEMP_c -ge 35 ]]; then
     echo "#05FFAF"
 else
-    echo "#BDBDDB"
+    echo "#839496"
 fi
 
 

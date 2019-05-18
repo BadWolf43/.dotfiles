@@ -78,6 +78,7 @@ separator=false
 
 ## WiFi percentage | interface: wlp0s20f3
 [wifi-module]
+#label=📶
 label=
 command=~/.scripts/statusbar/wifi_modual.sh
 interval=5

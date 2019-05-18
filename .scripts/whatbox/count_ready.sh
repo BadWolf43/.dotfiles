@@ -76,19 +76,14 @@ ls ${remote_other} | wc -l | tr -d '\n'
 
 # echo -e "\n[MUSIC]--------------------\n"
 # ls ${remote_music}
-
 # echo -e "\n[MOVIES]-------------------\n"
 # ls ${remote_movies}
-
 # echo -e "\n[TV]-----------------------\n"
 # ls ${remote_tv}
-
 # echo -e "\n[FILES]--------------------\n"
 # ls ${remote_files}
-
 # echo -e "\n[OTHER]--------------------\n"
 # ls ${remote_other}
-
 # echo -e "\n---------------------------\n"
 
 EOF
