@@ -1,34 +1,35 @@
 configuration {
-/*	modi: "window,run,ssh";*/
-/*	width: 50;*/
-/*	lines: 15;*/
-/*	columns: 1;*/
-/*	font: "mono 12";*/
-/*	bw: 1;*/
-/*	location: 0;*/
-/*	padding: 5;*/
-/*	yoffset: 0;*/
-/*	xoffset: 0;*/
-/*	fixed-num-lines: true;*/
-/*	show-icons: false;*/
-/*	terminal: "rofi-sensible-terminal";*/
-/*	ssh-client: "ssh";*/
+	modi: "drun,run";
+	width: 40;
+	lines: 30;
+	columns: 1;
+	font: "DejaVuSansMono NF Font 26";
+	bw: 0;
+	location: 0;
+	padding: 10;
+	yoffset: 0;
+	xoffset: 0;
+	fixed-num-lines: true;
+	show-icons: true;
+	terminal: "rofi-sensible-terminal";
+	ssh-client: "ssh";
 /*	ssh-command: "{terminal} -e {ssh-client} {host}";*/
 /*	run-command: "{cmd}";*/
 /*	run-list-command: "";*/
-/*	run-shell-command: "{terminal} -e {cmd}";*/
+	run-shell-command: "{terminal} -e {cmd}";
 /*	window-command: "xkill -id {window}";*/
 /*	window-match-fields: "all";*/
 /*	icon-theme: ;*/
-/*	drun-match-fields: "name,generic,exec,categories";*/
-/*	drun-show-actions: false;*/
-/*	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
+/*  drun-icon-theme: "MY_ICON_THEME";*/
+	drun-match-fields: "name,generic,exec,categories";
+	drun-show-actions: false;
+	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 /*	disable-history: false;*/
-/*	sort: false;*/
+/*	sort: true;*/
 /*	sorting-method: ;*/
 /*	case-sensitive: false;*/
-/*	cycle: true;*/
-/*	sidebar-mode: false;*/
+	cycle: false;
+	sidebar-mode: true;
 /*	eh: 1;*/
 /*	auto-select: false;*/
 /*	parse-hosts: false;*/
@@ -37,17 +38,17 @@ configuration {
 /*	matching: "normal";*/
 /*	tokenize: true;*/
 /*	m: "-5";*/
-/*	line-margin: 2;*/
-/*	line-padding: 1;*/
+	line-margin: 2;
+	line-padding: 1;
 /*	filter: ;*/
-/*	separator-style: "dash";*/
-/*	hide-scrollbar: false;*/
+	separator-style: "dash";
+	hide-scrollbar: false;
 /*	fullscreen: false;*/
 /*	fake-transparency: false;*/
-/*	dpi: -1;*/
+	dpi: -1;
 /*	threads: 0;*/
-/*	scrollbar-width: 8;*/
-/*	scroll-method: 0;*/
+	scrollbar-width: 10;
+	scroll-method: 0;
 /*	fake-background: "screenshot";*/
 /*	window-format: "{w}    {i}{c}   {t}";*/
 /*	click-to-exit: true;*/

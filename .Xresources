@@ -30,11 +30,16 @@ URxvt.letterSpace: 0
 
 
 !! rofi
-rofi.modi: run
+!rofi.modi: run
 rofi.font: DejaVuSansMono NF Font 24
-rofi.width: 50
-rofi.lines: 30
-rofi.columns: 1
+!rofi.width: 50
+!rofi.lines: 30
+!rofi.columns: 1
+!rofi.bw: 0
+!rofi.location: 2
+!rofi.padding: 60
+!rofi.fuzzy: false
+
 rofi.opacity: 20
 !! #282828  #c574dd #313443 #05ffaf
 !!                    bg       fg      altbg    hlbg     hlfg
@@ -42,10 +47,7 @@ rofi.color-normal: #282a36, #8897f4, #282a36, #414458, #f2a272
 rofi.color-urgent: #f37f97, #8897f4, #E2FF00, #f37f97, #E2FF00
 rofi.color-active: #282828, #79e6f3, #E2FF00, #E2FF00, #79e6f3
 rofi.color-window: #1d1f28, #f2a272
-rofi.bw: 0
-rofi.location: 2
-rofi.padding: 60
-rofi.fuzzy: false
+
 
 
 !! Meta modifier for keybindings

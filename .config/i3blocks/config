@@ -37,6 +37,12 @@ command=~/.scripts/statusbar/pacman_install
 interval=once
 signal=8
 
+[mail_module]
+label=📬
+command=~/.scripts/statusbar/mail_module.sh
+interval=180
+signal=12
+
 [dotfiles]
 label=🗃️
 command=~/.scripts/statusbar/modified_dotfiles_module.sh
@@ -68,12 +74,12 @@ command=~/.scripts/statusbar/disk_module.sh
 interval=60
 
 [lan-IP]
-#label=慎
-command=ip addr show ens20u1 | grep "inet "| awk '{ print ": " $2 }'
+#label=
+command=ip addr show ens20u1 | grep "inet "| awk '{ print ": " $2 }'
 #command=ip addr show wlp0s20f3 | grep "inet "| awk '{ print "ip: " $2 }'
 #command=hostname -i | awk '{ print "IP:" $1 }'
 interval=once
-color=#91E78B
+color=#05ffaf
 separator=false
 
 ## WiFi percentage | interface: wlp0s20f3
@@ -81,7 +87,7 @@ separator=false
 #label=📶
 label=
 command=~/.scripts/statusbar/wifi_modual.sh
-interval=5
+interval=2
 
 #[temperature] - this is wifi temp
 #command=~/.scripts/statusbar/temperature
@@ -103,16 +109,15 @@ interval=5
 #color=#6c71c4
 
 [cpu]
-label=CPU
-#label=💻
+label=CPU
 command=~/.scripts/statusbar/cpu_module.sh
-interval=10
+interval=5
 
 [memory]
-label=
+label=RAM
 #label=🧠
 command=~/.scripts/statusbar/memory_module
-interval=10
+interval=5
 
 [volume]
 command=~/.scripts/statusbar/volume

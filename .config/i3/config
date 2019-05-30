@@ -151,40 +151,49 @@ bindsym $mod+a focus parent
 
 ## Define names for default workspaces for which we configure key bindings later on.
 ## We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
+
+#           
+#    ❶❷❸❹❺❻❼❽❾❿❿   ➊➋➌➍➎➏➐➑➒➓   ➀➁➂➃➄➅➆➇➈➉                        
+# also add 'number $ws#' to each
+
+set $ws1 "1:"
+set $ws2 "2:"
+set $ws3 "3:"
+set $ws4 "4:"
+set $ws5 "5:"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws9 "9:"
+set $ws10 "10:"
+
+## TAB to workspace
+bindsym $mod+Shift+Tab workspace back_and_forth
+bindsym $mod+Tab workspace next
 
 ## switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
 
 ## move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
 
 ##--------------------------------------------------------------[ Restart Application ]
 ## Reload the configuration file
@@ -267,7 +276,7 @@ bindsym $mod+Print exec ~/.scripts/other/screenshots.sh active
 ## Start a Terminal
 bindsym $mod+Return exec --no-startup-id urxvt
 
-## Start a Terminal from current directory --------------------------------[NOT Working]
+## Start a Terminal from current directory (NOT Working)
 #bindsym $mod+Shift+Return exec ~/.scripts/i3/open_urxvt.sh 
 
 ## Start Thunar File Manager
@@ -283,16 +292,21 @@ bindsym $mod+Shift+b exec --no-startup-id firefox
 bindsym $mod+Shift+d exec --no-startup-id dmenu_run -b -sb PURPLE
 
 ## Start i3-dmenu-desktop which only displays applications with a .desktop file
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+## Start rofi drun
+bindsym $mod+d exec --no-startup-id rofi -show drun -icons -theme Custom_theme.rasi
 
 ## Lock screen with i3lock-fancy
 bindsym $mod+l exec --no-startup-id i3lock-fancy
 
-## Start ncmpcpp (mpd music player client)
-#bindsym $mod+Shift+m exec --no-startup-id ncmpcpp
+## Start ncmpcpp & mpd/polybar
+bindsym $mod+m exec "bash ~/.scripts/mpd/launch.sh"
 
-## Start Calculator
-#bindsym $mod+Shift+P exec "gnome-calculator --class calculator"
+## Stops ncmpcpp & polybar/mpd
+bindsym $mod+Shift+m exec "bash ~/.scripts/mpd/close.sh"
+# Tells urxvt to open and exec ncmpcpp
+#bindsym $mod+m exec urxvt -name ncmpcpp -e ncmpcpp
 
 ##--------------------------------------------------------------[ Floating Applications ]        
 for_window [class="calculator"] floating enable, resize set 700 900, border none
@@ -304,11 +318,12 @@ for_window [class="Sxiv"] floating enable, border normal, resize set 2880 1620
 for_window [class="mpv"] floating enable, sticky enable, border normal, resize set 1920 1080
 for_window [class="remmina"] floating enable, resize set 2560 1600
 for_window [class="rdesktop"] floating enable, resize set 2560 1600
+for_window [class="keepassxc"] floating enable, border normal, resize set 2560 1600, move absolute position center
 
 ##--------------------------------------------------------------[ Dialog windows ]
 for_window [class="Sublime_text" instance="sublime_text" title="Save File" window_role="GtkFileChooserDialog"] floating enable, resize set 1440 1080
 for_window [class="Thunar" instance="thunar" title="File Operation Progress"] floating enable, resize set 1000 200
-for_window [class="URxvt" instance="urxvt" title="pulsemixer"] floating enable
+for_window [class="URxvt" instance="urxvt" title="pulsemixer"] floating enable resize set 2000 400
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
@@ -330,7 +345,7 @@ for_window [instance="dropdown_*"] move position center
 
 floating_maximum_size 3840 x 2160
 ##--------------------------------------------------------------[ Start i3blocks ]
-##  Color Code Order: 'line color' > 'Background color' > 'Number Color'
+##  Color Code Order: 'line color' > 'Background color' > 'Text/Number Color'
 
 # bar toggle, hide or show 
 bindsym $mod+Shift+H bar2 mode toggle
@@ -343,12 +358,13 @@ bar {
     status_command i3blocks -c ~/.config/i3blocks/config
     mode dock
     modifier none
+    strip_workspace_numbers yes
     tray_output primary
   colors {
     separator  #8897f4
     background #1d1f28
     statusline #839496
-    focused_workspace  #05ffaf #1d1f28 #fdf6e3
+    focused_workspace  #05ffaf #1d1f28 #FDF6E3
     active_workspace   #05ffaf #30005d #079ba5
     inactive_workspace #1d1f28 #1d1f28 #4d4d4d
     urgent_workspace   #1d1f28 #FF3838 #FDF6E3
@@ -388,19 +404,19 @@ client.urgent            #FF0000 #410000 #FF0800 #FF3838 #FF3838
 
 hide_edge_borders both
 
-## class                 border  bground text    indicator child_border
-#client.focused           #8442CF #000000 #2BFFBF #05FFAF #00FFAD
-#client.focused_inactive  #000000 #000000 #4D4D4D #8442CF #8897f4
-#client.unfocused         #000000 #000000 #4D4D4D #000000 #000000
-#client.urgent            #FF0000 #410000 #FF0800 #FF3838 #FF3838
 ##---------------------------------------------------------------[ Start in Workspace ]
-exec --no-startup-id i3-msg "workspace 1; exec /usr/bin/urxvt"
-exec --no-startup-id i3-msg "workspace 2; exec /usr/bin/urxvt"
-exec --no-startup-id i3-msg "workspace 3; exec /usr/bin/vivaldi-stable"
-exec --no-startup-id i3-msg "workspace 4; exec /usr/bin/sublime_text"
-exec --no-startup-id i3-msg "workspace 5; exec /usr/bin/ranger"
-# this might fix vivaldi not opening on 3
-for_window [class="vivaldi-stable"] move to workspace 3
+for_window [class="vivaldi-stable"] move to workspace number $ws3
+for_window [class="charmap"] move to workspace number $ws7
+for_window [class="ncmpcpp"] move to workspace number $ws9
+
+##--------------------------------------------------------------[ Start at logon ]
+## Open in workspace on login
+exec --no-startup-id i3-msg "workspace number $ws1; exec /usr/bin/urxvt"
+exec --no-startup-id i3-msg "workspace number $ws2; exec /usr/bin/urxvt"
+exec --no-startup-id i3-msg "workspace number $ws3; exec /usr/bin/vivaldi-stable"
+exec --no-startup-id i3-msg "workspace number $ws4; exec /usr/bin/sublime_text"
+exec --no-startup-id i3-msg "workspace number $ws5; exec /usr/bin/thunar"
+
 
 ## Set wallpaper
 #exec_always --no-startup-id feh --bg-scale ~/storage/Pictures-X1e/Wallpapers/active/wall.png

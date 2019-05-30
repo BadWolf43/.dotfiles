@@ -49,8 +49,9 @@ alias emoji='$HOME/.scripts/other/emoji_rofi.sh'
 #alias tt='tree -gpush'
 #alias todo='calcurse '
 
-# --------------------------------------------[ tail logs and eMails ]
-alias mail='tail -f -n 25 /var/mail/root'		# tail root eMail
+# --------------------------------------------[ eMail ]
+#alias mbsync='mbsync -c ~/.config/mbsync/mbsyncrc'
+# --------------------------------------------[ tail logs ]
 #alias syslog='colortail -k ~/.config/colortail/rsyslog.conf -f /var/log/syslog'
 alias syslog='tail -n 50 -f /var/log/syslog'
 # --------------------------------------------[ Navigation ]
@@ -69,6 +70,7 @@ alias sc='cd ~/.scripts'
 alias cf='cd ~/.config'
 alias mn='cd /mnt'
 alias st='cd /mnt/storage'
+alias atl='cd /mnt/atlas'
 
 # --------------------------------------------[ Utilities ]
 alias mx='alsamixer'               # alsa audio mixer
