@@ -1,9 +1,11 @@
 #!/bin/sh
 # Syncs repositories and downloads updates, Runs as a cronjob.
 
+time="10000"
+
 ping -q -c 1 8.8.8.8 > /dev/null || exit
 
-notify-send "📦 Checking for pacakge updates..."
+notify-send -t $time "📦 Downloading pacakge updates..."
 
 sudo pacman -Syyuw --noconfirm || notify-send "Error downloading updates.
 

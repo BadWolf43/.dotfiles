@@ -36,11 +36,11 @@ echo $QUALITY% $BANDWIDTH
 echo $QUALITY% $BANDWIDTH
 
 # color
-if [[ $QUALITY -ge 75 ]]; then
+if [[ $QUALITY -ge 70 ]]; then
     echo "#05ffaf"
-elif [[ $QUALITY -ge 50 ]]; then
+elif [[ $QUALITY -ge 60 ]]; then
     echo "#FFFF48"
-elif [[ $QUALITY -ge 30 ]]; then
+elif [[ $QUALITY -ge 50 ]]; then
     echo "#FF9228"
 else
     echo "#FF4848"

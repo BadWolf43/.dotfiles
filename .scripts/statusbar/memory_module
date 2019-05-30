@@ -6,11 +6,11 @@ title_fg="foreground='#E8E713'"
 time="10000"
 
 ALL="$(free -wh)"
-TOTAL="$(free -wh | grep Mem | awk '{print $2}')"
+TOTAL="$(free -wh | grep Mem | awk '{print $2}')"  # <------- Maybe 'add 1 to reach the correct 16G of ram'
 CACHE="$(free -wh | grep Mem | awk '{print $7}')"
 AVAILABLE="$(free -wh | grep Mem | awk '{print $8}')"
 PERCENT_USED="$(free | grep Mem | awk '{print ($3+$5)/$2 * 100}' | sed 's/\(^..\).*/\1/')"
-PERCENT_FREE="$(free -h | grep Mem | awk '{print ($7)}' | sed 's/\(^..\).*/\1/')"
+#PERCENT_FREE="$(free -h | grep Mem | awk '{print ($7/$2 * 100)}' | sed 's/\(^..\).*/\1/')"    <-------- About 10% off
 
 case $BLOCK_BUTTON in
     1) notify-send  -i $icon \
@@ -21,7 +21,6 @@ case $BLOCK_BUTTON in
  Cache....: $CACHE
  Available: $AVAILABLE
  % Used...: $PERCENT_USED%
- $ Free...: $PERCENT_FREE%
 
 <span $title_fg><u><b>Top 15 Memory Hogs</b></u></span>
 $(ps axch -o cmd:25,%mem --sort=-%mem | head -n 15)
