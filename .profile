@@ -28,8 +28,11 @@ export BROWSER="vivaldi"
 export READER="zathura"
 export FILE="thunar"
 #export FILE="ranger"
+
+## QT/GTK Themes
 # VLC scaling fix
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export GTK2_RC_FILES=~/.config/gtk-2.0/gtkrc
 
 ## less/man colors
 export LESS=-R

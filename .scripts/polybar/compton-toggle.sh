@@ -14,9 +14,9 @@ case "$1" in
         ;;
     *)
         if [ "$(pgrep -x compton)" ]; then
-            echo ""
+            echo "compton  "
         else
-            echo ""
+            echo "compton  "
         fi
         ;;
 esac

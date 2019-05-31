@@ -86,6 +86,8 @@ alias shutdown='sudo shutdown -P'
 alias mount='mount | column -t'
 #alias date='date +"%m-%d-%Y | %H:%M:%S"'
 ## Calendar
+alias cal='cal | lolcat'
+## Ports
 alias ports='ss'
 #alias rearbackup='rear -v mkbackup'
 

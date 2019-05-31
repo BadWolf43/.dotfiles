@@ -13,7 +13,7 @@ case "$1" in
         ;;
     *)
         if [ "$(pgrep -x ncmpcpp)" ]; then
-            echo ""
+            echo " "
         fi
         ;;
 esac

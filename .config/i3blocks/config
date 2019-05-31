@@ -46,7 +46,7 @@ signal=12
 [dotfiles]
 label=🗃️
 command=~/.scripts/statusbar/modified_dotfiles_module.sh
-interval=once
+interval=30
 
 ## Weather updates hourly [WORKING] (Partly cloudy 73..77 F)
 #[weather2]
