@@ -13,7 +13,7 @@
 PS1="\[\e[38;5;52m\]-\[\e[38;5;1m\]-\[\e[38;5;9m\]-\[\e[38;5;240m\][\[\e[38;5;99m\]\u\[\e[38;5;49m\]@\[\e[38;5;165m\]\h\[\e[38;5;240m\]]\[\e[38;5;240m\]-[\[\e[38;5;49m\]\w\[\e[38;5;240m\]]\[\e[0m\]\n\[\e[38;5;49m\]~$\[\e[0m\] "
 
 #--------------------------------------------- SSH Menu
-alias sshmenu='$HOME/.scripts/other/ssh-menu.sh'
+alias sshmenu='/mnt/storage/Scripts-X1e/ssh-menu/ssh-menu.sh'
 #--------------------------------------------- My aliases
 alias SS='sudo systemctl'
 alias SP='sudo pacman'
@@ -33,8 +33,8 @@ alias Xres='nano $HOME/.Xresources'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/repos/.dotfiles/ --work-tree=$HOME'
 
 #--------------------------------------------- List and Search
-alias ls='ls --color=auto'
-alias ll='ls -AhlF'
+alias ls='ls --group-directories-first --color=auto'
+alias ll='ls -AhlFN --group-directories-first'
 alias nn='nano'
 alias snn='sudo nano'
 # open sublime text
@@ -45,7 +45,7 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias dir='dir -AlhF --color=auto'
-alias emoji='$HOME/.scripts/other/emoji_rofi.sh'
+alias emoji='$HOME/.scripts/rofi/emoji_rofi.sh'
 #alias tt='tree -gpush'
 #alias todo='calcurse '
 
@@ -70,7 +70,7 @@ alias sc='cd ~/.scripts'
 alias cf='cd ~/.config'
 alias mn='cd /mnt'
 alias st='cd /mnt/storage'
-alias atl='cd /mnt/atlas'
+alias atl='cd /mnt/atlas_nfs'
 
 # --------------------------------------------[ Utilities ]
 alias mx='alsamixer'               # alsa audio mixer

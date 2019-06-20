@@ -6,7 +6,7 @@
 
 case "$1" in
     --toggle)
-        if [ "$(pgrep -x ncmpcpp)" ]; then
+        if [ "$(pgrep -x polybar)" ]; then
             pkill ncmpcpp &
             pkill polybar
         fi

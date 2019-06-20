@@ -15,7 +15,8 @@ visualizer_output_name = Visualizer feed
 visualizer_in_stereo = yes
 visualizer_sync_interval = 30
 visualizer_type = wave
-visualizer_look = ●▮
+#visualizer_look = ●▮
+visualizer_look = .|
 #visualizer_color = blue, cyan, green, yellow, magenta, red
 ## Alternative subset of 256 colors for terminals that support it.
 visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
@@ -23,7 +24,8 @@ visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
 #---------------------------------------------[ Columns ]
 song_columns_list_format = "(6f)[yellow]{y:YEAR} (5f)[green]{NE:#} (15)[blue]{a:ARTIST} (20)[cyan]{b:ALBUM} (7f)[white]{d:DISC} (50)[white]{t|f:TITLE} (20)[white](g:GENRE) (7f)[white]{l:TIME}"
 #song_list_format = {%a - }{%t}|{$8%f$9}$R{$3(%l)$9}
-song_list_format = $3{%y}$8{│   }$5{%a}$8{  -  }$9{%b}$8{  -  }$8{ %N-}$7{%t}$R{%D}$8{  │  }$3{%l}
+#song_list_format = $3{%y}$8{│  }$5{%a}$8{  -  }$9{%b}$8{  -  }$8{%N-}$7{%t}$R{%C}$8{  │  }$3{%l}
+song_list_format = $3{%y}{│$5  }{%a}{  -  }$5{%b}{  -  }{%N-}$7{%t}$R{%C}{  │  }$3{%l}
 #song_list_format = "{$6%a$9} $1|$9 {$7%t$9} $R $1|$9 {$2%b$9} $1|$9 {$6%l$9}"
 #song_list_format = "$3{%l}$9 $1│$9 $5{%a}$9 $1│$9 $2{%t}$9 $R $6{%b}$9 $7({%y})$9 $1│$9 $4{%n}"
 song_status_format = {{%y{ "%a"{ (%b)}} - }{%t}}|{%f}
@@ -94,9 +96,17 @@ header_text_scrolling = yes
 #generate_win32_compatible_filenames = yes
 allow_for_physical_item_deletion = no
 
+## How shall screen switcher work?
+##
+## - "previous" - switch between the current and previous screen.
+## - "screen1,...,screenN" - switch between given sequence of screens.
+##
+## Screens available for use: help, playlist, browser, search_engine,
+## media_library, playlist_editor, tag_editor, outputs, visualizer, clock.
+
 screen_switcher_mode = playlist, browser, media_library, visualizer
 startup_screen = playlist
-#startup_slave_screen = "visualizer"
+#startup_slave_screen = "media_library"
 #startup_slave_screen_focus = no
 
 #locked_screen_width_part = 50
@@ -109,7 +119,7 @@ display_bitrate = yes
 display_remaining_time = yes
 
 ## [Available values: none, basic, extended, perl]
-#regular_expressions = perl
+regular_expressions = perl
 
 #ignore_diacritics = no
 block_search_constraints_change_if_items_found = yes
@@ -131,6 +141,18 @@ progressbar_color = black:b
 progressbar_elapsed_color = green:b
 
 #---------------------------------------------[ Colors ]
+## If you don't want to use a non-color attribute anymore, just put it again,
+## but this time insert character '/' between '$' and attribute character,
+## e.g. {$b%t$/b}|{$r%f$/r} will display bolded title tag or filename with
+## reversed colors.
+##
+## If you want to use 256 colors and/or background colors in formats (the naming
+## scheme is described below in section about color definitions), it can be done
+## with the syntax $(COLOR), e.g. to set the artist tag to one of the
+## non-standard colors and make it have yellow background, you need to write
+## $(197_yellow)%a$(end). Note that for standard colors this is interchangable
+## with attributes listed above.
+
 colors_enabled = yes
 empty_tag_color = cyan
 header_window_color = green

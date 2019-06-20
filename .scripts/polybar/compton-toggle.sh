@@ -4,6 +4,8 @@
 
 #      
 
+
+
 case "$1" in
     --toggle)
         if [ "$(pgrep -x compton)" ]; then
