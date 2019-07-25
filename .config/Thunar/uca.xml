@@ -34,6 +34,34 @@
 	<video-files/>
 </action>
 <action>
+	<icon>pyrenamer</icon>
+	<name>Rename to lower-case</name>
+	<unique-id>1561135659092899-1</unique-id>
+	<command>for file in %N; do mv &quot;$file&quot; &quot;$(echo &quot;$file&quot; | tr &apos;[:upper:]&apos; &apos;[:lower:]&apos;)&quot;; done</command>
+	<description>Rename the currently selected files, making the filenames lower-case.</description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>pyrenamer</icon>
+	<name>Replace spaces with periods</name>
+	<unique-id>1561135867782535-2</unique-id>
+	<command>for file in %N; do mv &quot;$file&quot; &quot;$(echo &quot;$file&quot; | tr -s &apos; &apos; | tr &apos; A-Z&apos; &apos;-a-z&apos; | tr -s &apos;.&apos; | tr -c &apos;[:alnum:][:cntrl:].&apos; &apos;.&apos;)&quot;; done</command>
+	<description>Rename the currently selected files, making the filenames lower-case &amp; replacing spaces with periods.</description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
 	<icon>edit-paste</icon>
 	<name>Copy Contents to Clipboard</name>
 	<unique-id>1553994248602560-1</unique-id>
@@ -50,15 +78,6 @@
 	<description>Send to Printer</description>
 	<patterns>*</patterns>
 	<text-files/>
-</action>
-<action>
-	<icon>view-refresh</icon>
-	<name>Refresh</name>
-	<unique-id>1555541680198291-1</unique-id>
-	<command></command>
-	<description></description>
-	<patterns>*</patterns>
-	<directories/>
 </action>
 <action>
 	<icon>image-crop</icon>

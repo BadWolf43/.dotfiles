@@ -16,7 +16,7 @@
 # urgent=...................
 ##--------------------------------------
 command=~/.scripts/statusbar/$BLOCK_NAME
-separator_block_width=30
+separator_block_width=35
 markup=pango
 ##--------------------------------------
 
@@ -30,6 +30,10 @@ markup=pango
 #color=#D92691
 #min_width=800
 #align=left
+
+[openweathermap]
+command=~/.scripts/statusbar/weather_owm_module.sh
+interval=600
 
 [pacinstall]
 label=📦
@@ -48,24 +52,19 @@ label=🗃️
 command=~/.scripts/statusbar/modified_dotfiles_module.sh
 interval=30
 
-## Weather updates hourly [WORKING] (Partly cloudy 73..77 F)
-#[weather2]
-#command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
-#interval=3600
-
 [whatbox]
 command=~/.scripts/whatbox/count_ready.sh
 interval=once
 
-[weather_module]
+#[weather_module]
 #label=wttr
-command=~/.scripts/statusbar/weather_module_wttr.sh
-interval=20
+#command=~/.scripts/statusbar/weather_module_wttr.sh
+#interval=20
 
-#[Weather]
-#command=~/.scripts/statusbar/IconicWeather2.sh "33409"
-#command=~/.scripts/status/weather
-#interval=1800
+# Weather updates hourly [WORKING] (Partly cloudy 73..77 F)
+#[weather2]
+#command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+#interval=3600
 
 [disk-home]
 #label=
@@ -79,7 +78,7 @@ command=ip addr show ens20u1 | grep "inet "| awk '{ print ": " $2 }'
 #command=ip addr show wlp0s20f3 | grep "inet "| awk '{ print "ip: " $2 }'
 #command=hostname -i | awk '{ print "IP:" $1 }'
 interval=once
-color=#05ffaf
+color=#05FFAF
 separator=false
 
 ## WiFi percentage | interface: wlp0s20f3
@@ -97,21 +96,23 @@ interval=2
 #T_CRIT=90
 #SENSOR_CHIP=""
 
-[cpu_temp_module]
-label=🌡️
-command=~/.scripts/statusbar/cpu_temp_module.sh
-interval=5
-
 #[load]
 #label=load: 
 #command=/usr/lib/i3blocks/load_average
 #interval=10
-#color=#6c71c4
+#color=#6C71C4
+
+[cpu_temp_module]
+label=🌡️
+command=~/.scripts/statusbar/cpu_temp_module.sh
+interval=5
+separator=false
 
 [cpu]
 label=CPU
 command=~/.scripts/statusbar/cpu_module.sh
 interval=5
+separator=false
 
 [memory]
 label=RAM

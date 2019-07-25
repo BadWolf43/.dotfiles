@@ -1,16 +1,16 @@
 configuration {
 	modi: "drun,run";
-	width: 40;
-	lines: 30;
-	columns: 1;
+/*	width: 40;*/
+/*	lines: 30;*/
+/*	columns: 1;*/
 	font: "DejaVuSansMono NF Font 26";
 	bw: 0;
 	location: 0;
-	anchor: center;
+/*	anchor: center;*/
 	padding: 10;
 	yoffset: 0;
 	xoffset: 0;
-	fixed-num-lines: true;
+/*	fixed-num-lines: true;*/
 	show-icons: true;
 	terminal: "rofi-sensible-terminal";
 	ssh-client: "ssh";
@@ -46,15 +46,15 @@ configuration {
 	hide-scrollbar: false;
 /*	fullscreen: false;*/
 /*	fake-transparency: false;*/
-	dpi: -1;
+	dpi: -0;
 /*	threads: 0;*/
-	scrollbar-width: 10;
+/*	scrollbar-width: 10;*/
 	scroll-method: 0;
 /*	fake-background: "screenshot";*/
 /*	window-format: "{w}    {i}{c}   {t}";*/
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
-/*	theme: "glue_pro_blue";*/
+	theme: "glue_pro_blue";
 /*	color-normal: ;*/
 /*	color-urgent: ;*/
 /*	color-active: ;*/

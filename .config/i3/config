@@ -153,15 +153,15 @@ bindsym $mod+a focus parent
 ## We use variables to avoid repeating the names in multiple places.
 
 #           
-#    ❶❷❸❹❺❻❼❽❾❿❿   ➊➋➌➍➎➏➐➑➒➓   ➀➁➂➃➄➅➆➇➈➉                        
+#    ❶❷❸❹❺❻❼❽❾❿❿   ➊➋➌➍➎➏➐➑➒➓   ➀➁➂➃➄➅➆➇➈➉                         
 # also add 'number $ws#' to each
 
-set $ws1 "1:"
+set $ws1 "1:"
 set $ws2 "2:"
 set $ws3 "3:"
-set $ws4 "4:"
+set $ws4 "4:"
 set $ws5 "5:"
-set $ws6 "6"
+set $ws6 "6:"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9:"
@@ -314,11 +314,11 @@ for_window [class="calculator"] floating enable, resize set 700 900, border none
 for_window [class="Lxappearance"] floating enable, sticky enable, resize set 1000 600, border normal
 for_window [class="systemd-manager"] floating enable, border normal
 for_window [class="gpick"] floating enable, border normal
-for_window [class="feh"] floating enable
+for_window [class="feh"] floating enable, border normal, resize set 2880 1620
 for_window [class="Sxiv"] floating enable, border normal, resize set 2880 1620
 for_window [class="mpv"] floating enable, sticky enable, border normal, resize set 1920 1080
-for_window [class="remmina"] floating enable, resize set 2560 1600
-for_window [class="rdesktop"] floating enable, resize set 2560 1600
+for_window [class="remmina"] floating enable, resize set 2560 1600, border normal
+for_window [class="rdesktop"] floating enable, resize set 2560 1600, border normal
 for_window [class="keepassxc"] floating enable, border normal, resize set 2560 1600, move absolute position center
 
 ##--------------------------------------------------------------[ Dialog windows ]

@@ -22,7 +22,9 @@ visualizer_look = .|
 visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
 
 #---------------------------------------------[ Columns ]
-song_columns_list_format = "(6f)[yellow]{y:YEAR} (5f)[green]{NE:#} (15)[blue]{a:ARTIST} (20)[cyan]{b:ALBUM} (7f)[white]{d:DISC} (50)[white]{t|f:TITLE} (20)[white](g:GENRE) (7f)[white]{l:TIME}"
+# (7f)[white]{d:DISC}
+#
+song_columns_list_format = "(6f)[cyan]{y:YEAR} (10)[cyan]{a:ARTIST} (5f)[green]{NE:#} (50)[blue]{t|f:TITLE} (20)[cyan]{b:ALBUM} (20)[white](g:GENRE) (7f)[white]{lr:TIME}"
 #song_list_format = {%a - }{%t}|{$8%f$9}$R{$3(%l)$9}
 #song_list_format = $3{%y}$8{│  }$5{%a}$8{  -  }$9{%b}$8{  -  }$8{%N-}$7{%t}$R{%C}$8{  │  }$3{%l}
 song_list_format = $3{%y}{│$5  }{%a}{  -  }$5{%b}{  -  }{%N-}$7{%t}$R{%C}{  │  }$3{%l}
@@ -56,7 +58,7 @@ playlist_shorten_total_times = no
 playlist_separate_albums = no
 
 ## [Possible display modes: classic, columns]
-playlist_display_mode = classic
+playlist_display_mode = columns
 browser_display_mode = classic
 search_engine_display_mode = classic
 playlist_editor_display_mode = classic
@@ -170,6 +172,8 @@ window_border_color = green
 active_window_border = red
 
 ##############################################[ NOTES ]
+
+# https://gist.github.com/ahushh/f37d3ad287eedaf82a7f
 #---------------------------------------------[ Song Format ]
 ## %l - length
 ## %f - filename
