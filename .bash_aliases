@@ -31,10 +31,13 @@ alias i3bc='nano $HOME/.config/i3blocks/config'
 alias i3bc2='nano $HOME/.config/i3blocks/config_bar2'
 alias Xres='nano $HOME/.Xresources'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/repos/.dotfiles/ --work-tree=$HOME'
+alias stui='s-tui'                                      # Stress/Monitor CPU tests
+alias rdphome='rdesktop -g 2560x1600 -P -z -x l -r sound:off -u rnader 76.110.17.183:3399'
 
 #--------------------------------------------- List and Search
 alias ls='ls --group-directories-first --color=auto'
 alias ll='ls -AhlFN --group-directories-first'
+alias kk='echo Dumbass, theres no kk'
 alias nn='nano'
 alias snn='sudo nano'
 # open sublime text

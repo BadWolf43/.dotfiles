@@ -18,11 +18,13 @@ URxvt*geometry:                115x40
 !URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=24:antialias=false:hinting=true
 URxvt*font: xft:DejaVuSansMono NF:pixelsize=24, xft:FontAwesome:pixelsize=24
 URxvt*boldfont: xft:DejaVuSansMono NF:pixelsize=24, xft:FontAwesome:pixelsize=24
+!URxvt*font: xft:Inconsolata Nerd Font Mono:pixelsize=28:minspace=False, xft:DejaVu Sans:pixelsize=24
+!URxvt*boldFont: xft:Inconsolata Nerd Font Mono:pixelsize=28:minspace=False, xft:DejaVu Sans:pixelsize=24
 
 URxvt*depth:       24
 URxvt*borderless:  1
 URxvt*scrollBar:   false
-URxvt*saveLines:   10000
+URxvt*saveLines:   20000
 URxvt.letterSpace: 0
 !URxvt.transparent: true
 !URxvt.tintcolor:   white
@@ -31,7 +33,7 @@ URxvt.letterSpace: 0
 
 !! rofi
 !rofi.modi: run
-rofi.font: DejaVuSansMono NF Font 24
+!rofi.font: DejaVuSansMono NF Font 24
 !rofi.width: 50
 !rofi.lines: 30
 !rofi.columns: 1
@@ -40,13 +42,13 @@ rofi.font: DejaVuSansMono NF Font 24
 !rofi.padding: 60
 !rofi.fuzzy: false
 
-rofi.opacity: 20
+!rofi.opacity: 20
 !! #282828  #c574dd #313443 #05ffaf
 !!                    bg       fg      altbg    hlbg     hlfg
-rofi.color-normal: #282a36, #8897f4, #282a36, #414458, #f2a272
-rofi.color-urgent: #f37f97, #8897f4, #E2FF00, #f37f97, #E2FF00
-rofi.color-active: #282828, #79e6f3, #E2FF00, #E2FF00, #79e6f3
-rofi.color-window: #1d1f28, #f2a272
+!rofi.color-normal: #282a36, #8897f4, #282a36, #414458, #f2a272
+!rofi.color-urgent: #f37f97, #8897f4, #E2FF00, #f37f97, #E2FF00
+!rofi.color-active: #282828, #79e6f3, #E2FF00, #E2FF00, #79e6f3
+!rofi.color-window: #1d1f28, #f2a272
 
 
 
