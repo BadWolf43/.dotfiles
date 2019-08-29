@@ -4,7 +4,7 @@
     geometry = "2160x5-50+75"
     indicate_hidden = yes
     shrink = yes
-    transparency = 15
+    transparency = 10
     notification_height = 0
     separator_height = 5
     padding = 10
@@ -24,11 +24,11 @@
     sort = yes
 
     idle_threshold = 120
-    #font = "DejaVu Sans Mono"
-    font = "LiterationMono Nerd Font"
+    font = "DejaVu Sans Mono"
+    #font = "LiterationMono Nerd Font"
     #font = "Inconsola Nerd Font Mono"
     #font = Monospace 14
-    line_height = 0
+    line_height = 1
     markup = full
 
     # The format of the message.  Possible variables are:

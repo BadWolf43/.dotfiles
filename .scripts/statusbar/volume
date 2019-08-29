@@ -9,26 +9,27 @@ case $BLOCK_BUTTON in
 	4) pulsemixer --change-volume +5 ;;
 	5) pulsemixer --change-volume -5 ;;
 	3) pgrep -x dunst >/dev/null && notify-send "<b>📢 Volume module:</b>
-- Shows volume 🔊, 🔇 if muted.
+- Shows volume 🔊, 🔇, 🔊, 🔈, 🔉 if muted.
 - Middle click to mute.
 - Scroll to change."
 esac
+
 
 [ "$(pulsemixer --get-mute)" = "1" ] && printf "🔇\\n" && exit
 
 vol=$(pulsemixer --get-volume | awk '{print $1}')
 
 if [ "$vol" -gt "70" ]; then
-	icon="🔊"
+	icon=""
 elif [ "$vol" -lt "30" ]; then
-	icon="🔈"
+	icon=""
 else
-	icon="🔉"
+	icon=""
 fi
 
 printf "%s %s%%\\n" "$icon" "$vol"
 
-#----------------------------------------------------------------
+#----------------------------------------------------------------      
 ## This script uses amixer
 ## 1=left click ; 2=middle click ; 3=right click ; 4=scroll up ; 5=scroll down
 

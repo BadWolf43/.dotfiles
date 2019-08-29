@@ -37,7 +37,7 @@ echo $QUALITY% $BANDWIDTH
 
 # color
 if [[ $QUALITY -ge 70 ]]; then
-    echo "#05ffaf"
+    echo "#839496"
 elif [[ $QUALITY -ge 60 ]]; then
     echo "#FFFF48"
 elif [[ $QUALITY -ge 50 ]]; then
@@ -51,7 +51,7 @@ fi
 case $BLOCK_BUTTON in
     1) notify-send  -i $icon \
                     -t 9000  \
-    "<span $title_fg><u><b>WiFi Module</b></u></span>
+    "WiFi Module
 
  Bandwidth...: $(echo $BANDWIDTH)
  Strength....: $(echo $QUALITY%)

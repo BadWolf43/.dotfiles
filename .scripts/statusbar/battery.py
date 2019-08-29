@@ -44,6 +44,8 @@ else:
     else:
         percentleft = 0
 
+
+#
 # FA_LIGHTNING =   \uf0e7  ; emoji = ⚡
 # FA_PLUG =       \uf1e6  ; emoji = 🔌
 # FA_BATTERY =     \uf240  ; emoji = 🔋
@@ -51,7 +53,7 @@ else:
 
     FA_LIGHTNING = "<span color='yellow'><span font='FontAwesome'>\uf0e7</span></span>"
 #    FA_PLUG = "<span font='FontAwesome'>\uf1e6</span>"
-    FA_PLUG = "🔌"
+    FA_PLUG = ""
     FA_BATTERY = "<span font='FontAwesome'>\uf240</span>"
     FA_QUESTION = "<span font='FontAwesome'>\uf0e7</span>"
 

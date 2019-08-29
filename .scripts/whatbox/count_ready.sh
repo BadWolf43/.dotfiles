@@ -44,7 +44,7 @@ EOF
 exit)" ;;
 
     3) notify-send  -i $icon \
-    "<span $title_fg><u><b>WhatBox Module</b></u></span>
+    "WhatBox Module
 
  Left Click: List Available
  Right Click: Show This Menu"  ;;

@@ -21,6 +21,9 @@ URxvt*boldfont: xft:DejaVuSansMono NF:pixelsize=24, xft:FontAwesome:pixelsize=24
 !URxvt*font: xft:Inconsolata Nerd Font Mono:pixelsize=28:minspace=False, xft:DejaVu Sans:pixelsize=24
 !URxvt*boldFont: xft:Inconsolata Nerd Font Mono:pixelsize=28:minspace=False, xft:DejaVu Sans:pixelsize=24
 
+!!!!!!!! xterm backup terminal setup here (WORKING ON)
+!xterm*faceSize: 23
+
 URxvt*depth:       24
 URxvt*borderless:  1
 URxvt*scrollBar:   false

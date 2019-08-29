@@ -13,10 +13,18 @@ calendar="$(cal -m)"
 case $BLOCK_BUTTON in
     1) notify-send  -i $icon \
                     -t $time  \
-    "<span $title_fg><u><b>Calendar Module</b></u></span>
+    "Calendar Module
 
 $calendar" ;;
 esac
 
 # Status bar clock
 echo $DATEFMT  $TIMEFMT
+
+# case $BLOCK_BUTTON in
+#     1) notify-send  -i $icon \
+#                     -t $time  \
+#     "<span $title_fg><u><b>Calendar Module</b></u></span>
+
+# $calendar" ;;
+# esac

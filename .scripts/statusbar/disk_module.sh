@@ -18,7 +18,7 @@ case $BLOCK_BUTTON in
                     -h $color_fg \
                     -h $color_bg  \
                     -t $time  \
-    "<span $title_fg><u><b>Disk Module</b></u></span>
+    "Disk Module
 
 $filesystem"  ;;
 esac

@@ -8,10 +8,10 @@ title_fg="foreground='#E8E713'"
 available="$HOME/.locks/.pacman-downloads"
 
 case $BLOCK_BUTTON in
-    1) notify-send "$(/usr/bin/pacman -Qu)" ;;
+    1) notify-send -i $icon "$(/usr/bin/pacman -Qu)" ;;
     2) $TERMINAL -e sudo pacman -Syu && pacman -Qu | wc -l > ~/.locks/.pacman-downloads && pkill -RTMIN+8 i3blocks ;;
     3) pgrep -x dunst >/dev/null && notify-send -i $icon -t 5000  \
-    "<span $title_fg><u><b>Pacman Module</b></u></span>
+    "Pacman Module
 
   - 📦: Number of upgradable packages
   - Left click to show upgradable packages

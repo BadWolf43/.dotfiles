@@ -13,7 +13,7 @@ cpu="$(ps axc -o cmd:25,%cpu --sort=-%cpu | head -n 15)"
 case $BLOCK_BUTTON in
     1) notify-send  -i $icon \
                     -t $time  \
-    "<span $title_fg><u><b>CPU Module</b></u></span>
+    "CPU Module
 
 $cpu
 " ;;

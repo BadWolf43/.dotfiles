@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# CPU Temp
+# CPU Temp Module (Lenovo laptop MAX temp=82c)
 
 icon=~/.icons/dunst/thermometer_icon.png
 title_fg="foreground='#E8E713'"
@@ -22,15 +22,13 @@ else
 fi
 
 
-
+# #05FFAF
 if [[ $TEMP_c -ge 70 ]]; then
     echo "#FF4848"
 elif [[ $TEMP_c -ge 60 ]]; then
     echo "#FF9228"
 elif [[ $TEMP_c -ge 50 ]]; then
     echo "#FFFF48"
-elif [[ $TEMP_c -ge 35 ]]; then
-    echo "#05FFAF"
 else
     echo "#839496"
 fi
@@ -39,7 +37,7 @@ fi
 case $BLOCK_BUTTON in
     1) notify-send  -i $icon \
                     -t $time  \
-    "<span $title_fg><u><b>CPU Temp Module</b></u></span>
+    "CPU Temp Module
 
  Avarge Core Temp...: $(echo $TEMP_c"°C") / $(echo $TEMP_f"°F")
  Fan .......: $(echo $FANS"(rpm's)")

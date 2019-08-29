@@ -15,14 +15,15 @@ PERCENT_USED="$(free | grep Mem | awk '{print ($3+$5)/$2 * 100}' | sed 's/\(^..\
 case $BLOCK_BUTTON in
     1) notify-send  -i $icon \
                     -t $time  \
-    "<span $title_fg><u><b>Memory Module</b></u></span>
+    "Memory Module
 
  Total....: $TOTAL
  Cache....: $CACHE
  Available: $AVAILABLE
  % Used...: $PERCENT_USED%
 
-<span $title_fg><u><b>Top 15 Memory Hogs</b></u></span>
+Top 15 Memory Hogs
+
 $(ps axch -o cmd:25,%mem --sort=-%mem | head -n 15)
 " ;;
 esac
@@ -49,7 +50,7 @@ elif [[ $PERCENT_USED -ge 65 ]]; then
     echo "#FF9228"
 elif [[ $PERCENT_USED -ge 50 ]]; then
     echo "#FFFF48"
-elif [[ $PERCENT_USED -ge 25 ]]; then
+elif [[ $PERCENT_USED -ge 35 ]]; then
     echo "#05FFAF"
 else
     echo "#839496"

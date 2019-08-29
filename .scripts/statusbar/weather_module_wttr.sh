@@ -19,12 +19,13 @@
 
 ## returns
 #33409 +82°F Partly cloudy 65% ←22 mph 2.6mm 1019hPa 🌘
-#" ☁️ 🌥️ ⛅ 🌤️ ☀️ 🌦️ 🌧️ ☔ 🌨️ ⛈️ 🌩️ 🌬️ 🌫️ ❄️ 🌙 🥶 🥵 ❓
+# ☁️ 🌥️ ⛅ 🌤️ ☀️ 🌦️ 🌧️ ☔ 🌨️ ⛈️ 🌩️ 🌬️ 🌫️ ❄️ 🌙 🥶 🥵 ❓
 
 icon_cloudy="☁️"
 icon_partly_cloudy="🌤️"
 icon_mostly_cloudy="🌥️"
 icon_foggy="🌫️"
+icon_overcast="🌫️"
 icon_rain="🌧️"
 icon_light_rain="☔"
 icon_thunderstorm="⛈️"
@@ -32,11 +33,13 @@ icon_light_snow="🌨️"
 icon_snow="❄️"
 icon_windy="🌬️"
 icon_sunny="☀️"
+icon_clear="☀️"
 icon_unknow="❓"
 icon_hot="🥵"
 icon_cold="🥶"
 
-cl="Cloudy"
+cl="Clear"
+cld="Cloudy"
 mc="Mostly cloudy"
 pc="Partly cloudy"
 lr="Light Rain"
@@ -52,16 +55,24 @@ uk="Unknow"
 
 icon=~/.icons/dunst/weather-icon.png
 title_fg="foreground='#E8E713'"
-time="10000"
+notify_time="10000"
 wttr_location=$(curl wttr.in/?format="%l")
 wttr_current=$(curl wttr.in/?format="%l+%t+%h+%w+%p+%P+%m")
 wttr=$(curl wttr.in/33409?format="%l+%t+%h+%w+%p+%P+%m")
 condition_icon=$(curl wttr.in/33409?format="%c+%t")
 condition=$(curl wttr.in/33409?format="%C")
 temp=$(curl wttr.in/33409?format="%t")
-
-
+time=$(date +%l:%M%p)
 tempNum=$(curl wttr.in/33409?format="%t" | head -c 3)
+moon=$(curl wttr.in/33409?format="%l+%t+%h+%w+%p+%P+%m" | awk '{print $8}')
+
+# if [[ $time -ge '7:00PM' ]]; then
+#     emoji=""
+# else
+#     emoji="$moon"
+# if
+
+#--------------
 face=""
 # Adds 🥵 if over 100
 if [[ $tempNum -ge 100 ]]; then
@@ -83,15 +94,18 @@ fi
 if [[ $condition = "Thunderstorm" ]]; then
     emoji="$icon_thunderstorm"
     echo $icon_thunderstorm $temp $face
-elif [[ $condition = "Sunny" ]]; then
+elif [[ $condition = "Sunny" ]] || [[ $condition = "Clear" ]]; then
     emoji="$icon_sunny"
     echo $icon_sunny $temp $face
 elif [[ $condition = "Light Rain" ]]; then
     emoji="$icon_light_rain"
     echo $icon_light_rain $temp $face
-elif [[ $condition = "Rain" ]]; then
+elif [[ $condition = "Rain" ]] || [[ $condition = "Light rain shower" ]] || [[ $condition = "Patchy rain possible" ]]; then
     emoji="$icon_rain"
     echo $icon_rain $temp $face
+elif [[ $condition = "Thunderstorm" ]] || [[ $condition = "Rain With Thunderstorm" ]]; then
+    emoji="$icon_thunderstorm"
+    echo $icon_thunderstorm $temp $face
 elif [[ $condition = "Mostly cloudy" ]]; then
     emoji="$icon_partly_cloudy"
     echo $icon_partly_cloudy $temp $face
@@ -101,6 +115,9 @@ elif [[ $condition = "Partly cloudy" ]]; then
 elif [[ $condition = "Windy" ]]; then
     emoji="$icon_windy"
     echo $icon_windy $temp $face
+elif [[ $condition = "Overcast" ]] || [[ $condition = "Foggy" ]]; then
+    emoji="$icon_overcast"
+    echo $icon_overcast $temp $face
 else
     echo "🤕 FIX ME"
 fi
@@ -110,7 +127,7 @@ fi
 
 case $BLOCK_BUTTON in
     1) notify-send  -i $icon \
-                    -t $time  \
+                    -t $notify_time  \
     "<span $title_fg><u><b>33409 - Weather Module</b></u></span>
 - Left Click.: West Palm Beach (by zipcode) 
 - Right Click: Current Location (by IP)
@@ -127,7 +144,7 @@ case $BLOCK_BUTTON in
 " ;;
     
     3) notify-send  -i $icon \
-                    -t $time  \
+                    -t $notify_time  \
     "<span $title_fg><u><b>Current IP Location - Weather Module</b></u></span>
 
 ----------[ Current IP Location ]----------
@@ -147,6 +164,7 @@ esac
 ## WeatherCode Conditions
 #########################
 Clear/Sunny
+Clear
 Partly Cloudy
 Cloudy
 Overcast

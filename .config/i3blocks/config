@@ -1,7 +1,7 @@
 ## List of valid properties:
 #
 # align=....................left/right/center
-# color=....................#000000
+# color=....................#000000 #bdbddb #909090 #839496 #05FFAF
 # command=..................command or path to script
 # full_text=................text
 # instance=.................service
@@ -14,6 +14,11 @@
 # short_text=...............text
 # signal=...................number/once
 # urgent=...................
+
+## pango markup example
+# [funky]
+# full_text=<span foreground="red" size="x-large">Roses</span> and <i><span color="#EE37B8">violets</span></i>!
+# markup=pango
 ##--------------------------------------
 command=~/.scripts/statusbar/$BLOCK_NAME
 separator_block_width=35
@@ -31,24 +36,33 @@ markup=pango
 #min_width=800
 #align=left
 
+[wallhaven_scraper]
+command=~/.scripts/statusbar/wallhaven_scraper_module.sh
+# 3 hours
+interval=10000
+
 [openweathermap]
 command=~/.scripts/statusbar/weather_owm_module.sh
+# 10 minutes
 interval=600
 
 [pacinstall]
-label=📦
+#label=📦
+label=
 command=~/.scripts/statusbar/pacman_install
 interval=once
 signal=8
 
 [mail_module]
-label=📬
+#label=📬
+label=
 command=~/.scripts/statusbar/mail_module.sh
 interval=180
 signal=12
 
 [dotfiles]
-label=🗃️
+#label=🗃️
+label=
 command=~/.scripts/statusbar/modified_dotfiles_module.sh
 interval=30
 
@@ -68,7 +82,8 @@ interval=once
 
 [disk-home]
 #label=
-label=💽
+#label=💽
+label=
 command=~/.scripts/statusbar/disk_module.sh
 interval=60
 
@@ -83,8 +98,8 @@ separator=false
 
 ## WiFi percentage | interface: wlp0s20f3
 [wifi-module]
-#label=📶
-label=
+#label=📶
+label=
 command=~/.scripts/statusbar/wifi_modual.sh
 interval=2
 
@@ -110,6 +125,7 @@ separator=false
 
 [cpu]
 label=CPU
+#color=#6C71C4
 command=~/.scripts/statusbar/cpu_module.sh
 interval=5
 separator=false
@@ -126,7 +142,8 @@ interval=1
 signal=20
 
 [brightness]
-label=💡
+#label=💡
+#label=
 interval=20
 
 [battery]
@@ -139,6 +156,9 @@ interval=10
 #interval=10
 
 [calendar]
-label=📅
+#label=📅
+label=
+color=#909090
 command=~/.scripts/statusbar/calendar_module.sh
 interval=1
+
