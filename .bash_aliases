@@ -39,7 +39,7 @@ alias stui='s-tui'
 ## Graphical htop
 alias gotop='gotop'
 ## RDP to Rnader-PC
-alias rdphome='rdesktop -g 3740x2060 -P -z -x l -r sound:off -u rnader 76.110.17.183:3399'
+alias rdphome='bash ~/.scripts/other/rdp_home.sh'
 
 ##--------------------------------------------- List and Search
 alias ls='ls --group-directories-first --color=auto'
