@@ -50,7 +50,7 @@ elif [[ $PERCENT_USED -ge 65 ]]; then
     echo "#FF9228"
 elif [[ $PERCENT_USED -ge 50 ]]; then
     echo "#FFFF48"
-elif [[ $PERCENT_USED -ge 35 ]]; then
+elif [[ $PERCENT_USED -ge 40 ]]; then
     echo "#05FFAF"
 else
     echo "#839496"

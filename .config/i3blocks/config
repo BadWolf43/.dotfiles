@@ -81,9 +81,9 @@ interval=once
 #interval=3600
 
 [disk-home]
-#label=
+label=
 #label=💽
-label=
+#label=
 command=~/.scripts/statusbar/disk_module.sh
 interval=60
 

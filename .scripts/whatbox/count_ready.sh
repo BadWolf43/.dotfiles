@@ -50,36 +50,37 @@ exit)" ;;
  Right Click: Show This Menu"  ;;
 esac
 #-----------------------------------------------------
+#                 
 # Connecting to WB
 ssh -T "${user}"@"${host}" << EOF
 
 
 # Output to i3blocks
-echo "🎧" | tr -d '\n'
+echo " " | tr -d '\n'
 ls ${remote_music} | wc -l | tr -d '\n'
 
-echo " 🎬" | tr -d '\n'
+echo "  " | tr -d '\n'
 ls ${remote_movies} | wc -l | tr -d '\n'
 
-echo " 📺" | tr -d '\n'
+echo "  " | tr -d '\n'
 ls ${remote_tv} | wc -l | tr -d '\n'
 
-echo " 📄" | tr -d '\n'
+echo "  " | tr -d '\n'
 ls ${remote_files} | wc -l | tr -d '\n'
 
-echo " 💾" | tr -d '\n'
+echo "  " | tr -d '\n'
 ls ${remote_other} | wc -l | tr -d '\n'
 
 #-----------------------------------------------------
-# music 
+# music 🎧
 # ls ${remote_music} | wc -l
-# # moves 
+# # moves 🎬
 # ls ${remote_movies} | wc -l
-# # tv 
+# # tv 📺
 # ls ${remote_tv} | wc -l
-# # files 
+# # files 📄
 # ls ${remote_files} | wc -l
-# # other 
+# # other 💾
 # ls ${remote_other} | wc -l
 # -----------------------------------------------------
 
